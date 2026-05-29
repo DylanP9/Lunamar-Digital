@@ -19,7 +19,9 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "border-b border-[var(--color-line)] bg-[var(--color-ink)]/70 backdrop-blur-xl" : ""
+        scrolled
+          ? "border-b border-[var(--color-line)] bg-[var(--color-ink)]/95 backdrop-blur-xl supports-[backdrop-filter]:bg-[var(--color-ink)]/85"
+          : ""
       }`}
       style={{ ["--header-h" as string]: "64px" }}
     >
