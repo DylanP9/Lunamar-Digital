@@ -19,7 +19,7 @@ const sections = [
   },
   {
     heading: "Analytics",
-    body: "This website does not currently use analytics or tracking cookies. If analytics are added in future, this page will be updated to explain what is collected and how consent is handled.",
+    body: "This website uses Vercel Analytics to understand aggregate visitor numbers and page views. It is privacy-friendly: it does not use cookies, does not track you across other websites, and does not collect personally identifiable information. We use it only to see which pages are useful and improve the site.",
   },
   {
     heading: "How we use your information",
