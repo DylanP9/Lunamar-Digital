@@ -24,11 +24,7 @@ export default function ProcessTimeline() {
               <li key={step.number} className="lg:grid lg:grid-cols-2 lg:gap-12">
                 <Reveal
                   delay={i * 80}
-                  className={
-                    i % 2 === 0
-                      ? "lg:col-start-1 lg:text-right"
-                      : "lg:col-start-2"
-                  }
+                  className={i % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2"}
                 >
                   <div className="glow-border relative rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.02] p-7 lg:my-6">
                     <span className="font-[family-name:var(--font-display)] text-3xl font-semibold text-transparent [-webkit-text-stroke:1px_rgba(91,140,255,0.6)]">

@@ -7,7 +7,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
     <div
       className={`glow-border group relative flex h-full flex-col rounded-[var(--radius-card)] border p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-7 ${
         plan.featured
-          ? "border-[var(--color-line-strong)] bg-white/[0.05]"
+          ? "border-[var(--color-line-strong)] bg-white/[0.05] shadow-[0_24px_70px_-30px_rgba(124,58,237,0.65)] lg:-translate-y-2 lg:hover:-translate-y-3"
           : "border-[var(--color-line)] bg-white/[0.02]"
       }`}
     >

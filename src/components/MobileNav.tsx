@@ -21,6 +21,8 @@ export default function MobileNav() {
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    // Move focus into the panel so keyboard users land on the nav.
+    panelRef.current?.querySelector<HTMLElement>("a")?.focus();
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
