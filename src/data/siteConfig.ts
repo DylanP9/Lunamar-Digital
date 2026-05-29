@@ -15,8 +15,8 @@ export const siteConfig = {
   /** Canonical site URL. Update once the final domain is confirmed. */
   url: "https://lunamardigital.co.uk",
 
-  /** Placeholder contact details — confirm before launch. */
-  email: "hello@lunamardigital.co.uk",
+  /** Contact email. Confirm the final domain-based address before launch. */
+  email: "Lunamardigital1@outlook.com",
   domain: "lunamardigital.co.uk",
 
   /** Headline sales hook reused across the site. */

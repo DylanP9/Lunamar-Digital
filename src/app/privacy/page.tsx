@@ -15,7 +15,7 @@ const sections = [
   },
   {
     heading: "Contact information",
-    body: "If you contact us through the website, you do so via your own email application. The current contact form prepares an email for you to send — it does not store your details on this website or send them to a third-party service. Any information you choose to email us is used only to respond to your enquiry.",
+    body: "When you submit the contact form, your details are sent to us by email through a third-party form service (Web3Forms) so we can receive and reply to your enquiry. We use this information only to respond to you. If the form service is unavailable, the form falls back to opening your own email application instead. The website itself does not store a database of your details.",
   },
   {
     heading: "Analytics",

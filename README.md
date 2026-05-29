@@ -148,16 +148,35 @@ don't render SVG OG images. Update `siteConfig.ogImage` if you change the path.
 
 ---
 
-## Configuring the contact form (later)
+## Contact form
 
-The contact form (`src/components/ContactForm.tsx`) currently uses a **mailto
-fallback** — submitting opens the visitor's email client with a prefilled
-message. Nothing is stored or sent by the site.
+The contact form (`src/components/ContactForm.tsx`) submits via **Web3Forms** —
+a no-backend service that emails submissions to the inbox tied to your access
+key (currently **Lunamardigital1@outlook.com**). No server, database or API
+route is required, so it works on static hosting / Vercel.
 
-To accept submissions server-side, wire up a provider (e.g. Formspree,
-Web3Forms, Resend, or a Next.js route handler) and replace the `handleSubmit`
-logic. Update the privacy page if you start storing data, and add a consent
-mechanism if you add analytics.
+**To activate it:**
+
+1. Go to [web3forms.com](https://web3forms.com) and enter
+   `Lunamardigital1@outlook.com` as the destination — you'll be emailed a free
+   access key.
+2. Paste it into `.env.local`:
+   ```
+   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your-key-here
+   ```
+3. Restart `npm run dev` (locally) and add the same env var in your host's
+   project settings (e.g. Vercel → Settings → Environment Variables) for
+   production.
+
+**Fallback:** if the key is missing, the form gracefully opens the visitor's own
+email app with the details prefilled instead of failing. Spam is reduced with a
+hidden honeypot field. The `replyto` is set to the enquirer's email, so you can
+reply straight from Outlook.
+
+> The `NEXT_PUBLIC_` prefix means the key is visible in the browser — this is
+> expected and supported by Web3Forms (the key only allows sending to your
+> chosen inbox). To swap providers (Formspree, Resend, a route handler), replace
+> the `fetch` call in `handleSubmit`.
 
 ---
 
@@ -198,7 +217,7 @@ required for the current (static) build.
 - [ ] Create proposal template
 - [ ] Add **real logo** assets and a **1200×630 OG image**
 - [ ] Add **real case-study screenshots** (and team photos if wanted)
-- [ ] Wire up a **real contact form** provider
+- [ ] Add the **Web3Forms access key** to `.env.local` + host env (see "Contact form")
 - [ ] Add **analytics** only after choosing a provider and a consent approach
 
 ---
