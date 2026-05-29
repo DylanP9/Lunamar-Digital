@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #04050a;
+  --color-ink-soft: #080a12;
+  --color-panel: #0c0e18;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+  --color-mist: rgba(255, 255, 255, 0.66);
+  --color-mistier: rgba(255, 255, 255, 0.46);
+
+  --color-blue: #5b8cff;
+  --color-blue-deep: #3461ff;
+  --color-purple: #a472ff;
+  --color-purple-deep: #7c3aed;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-sans);
+
+  --radius-card: 1.25rem;
+
+  --shadow-glow: 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 30px 80px -40px rgba(91, 140, 255, 0.55);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: #fff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Ambient page background: deep space with blue/purple glow + subtle noise. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60% 50% at 50% -10%, rgba(124, 58, 237, 0.22), transparent 70%),
+    radial-gradient(50% 40% at 85% 10%, rgba(52, 97, 255, 0.18), transparent 70%),
+    radial-gradient(40% 40% at 10% 30%, rgba(164, 114, 255, 0.12), transparent 70%),
+    var(--color-ink);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: rgba(91, 140, 255, 0.35);
+  color: #fff;
+}
+
+/* Visible, on-brand focus ring for keyboard users. */
+:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- Utility component classes ---------- */
+
+.glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(14px);
+}
+
+.glow-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    140deg,
+    rgba(91, 140, 255, 0.7),
+    rgba(164, 114, 255, 0.35) 40%,
+    transparent 70%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out-soft);
+  z-index: -1;
+}
+
+.glow-border:hover::before,
+.glow-border:focus-within::before {
+  opacity: 1;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #fff 20%, #b9ccff 55%, #c9b4ff 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section {
+  padding-block: clamp(4rem, 9vw, 8rem);
+}
+
+.container-x {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes drift-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 48s linear infinite;
+}
+.animate-spin-reverse {
+  animation: spin-reverse 64s linear infinite;
+}
+.animate-float {
+  animation: float-y 7s var(--ease-out-soft) infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+
+/* Scroll reveal — opt-in via data attribute, toggled by IntersectionObserver. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out-soft),
+    transform 0.7s var(--ease-out-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
