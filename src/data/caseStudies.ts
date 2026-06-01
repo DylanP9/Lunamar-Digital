@@ -47,12 +47,31 @@ export const caseStudies: CaseStudy[] = [
       "Test, agree launch timing and go live",
     ],
     mockups: [
-      { label: "Homepage", caption: "Brand-led landing with clear ordering actions" },
-      { label: "Menu", caption: "Interactive, mobile-first menu browsing" },
-      { label: "Location", caption: "Location pages with local SEO foundations" },
-      { label: "Meal Prep", caption: "Dedicated meal-prep promotion" },
-      { label: "Checkout foundations", caption: "Square checkout preparation" },
-      { label: "Mobile view", caption: "Designed mobile-first from the start" },
+      {
+        label: "Homepage",
+        caption: "Brand-led landing with clear ordering actions",
+        image: "/images/case-studies/gym-vibe-cafe/homepage.png",
+      },
+      {
+        label: "Menu",
+        caption: "Interactive, mobile-first menu browsing",
+        image: "/images/case-studies/gym-vibe-cafe/menu.png",
+      },
+      {
+        label: "Location",
+        caption: "Location pages with local SEO foundations",
+        image: "/images/case-studies/gym-vibe-cafe/location.png",
+      },
+      {
+        label: "Meal Prep",
+        caption: "Dedicated meal-prep promotion",
+        image: "/images/case-studies/gym-vibe-cafe/meal-prep.png",
+      },
+      {
+        label: "Mobile view",
+        caption: "Designed mobile-first from the start",
+        image: "/images/case-studies/gym-vibe-cafe/mobile-homepage.png",
+      },
     ],
     featured: true,
   },

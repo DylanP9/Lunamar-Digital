@@ -3,6 +3,8 @@ export interface CaseStudyMockup {
   label: string;
   /** Short description of what the screen shows. */
   caption: string;
+  /** Optional approved screenshot shown in the mockup card. */
+  image?: string;
 }
 
 export interface CaseStudy {
