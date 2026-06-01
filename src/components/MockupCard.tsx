@@ -1,26 +1,53 @@
 import type { CaseStudyMockup } from "@/types/caseStudy";
 import Image from "next/image";
 
+type MockupCardVariant = "standard" | "large" | "hero";
+
+const imageClassByVariant: Record<MockupCardVariant, string> = {
+  standard: "aspect-[16/10]",
+  large: "aspect-[16/9]",
+  hero: "aspect-[16/9] lg:aspect-[16/8.5]",
+};
+
+const cardClassByVariant: Record<MockupCardVariant, string> = {
+  standard: "p-4",
+  large: "p-4 sm:p-5",
+  hero: "p-4 sm:p-5 lg:p-6",
+};
+
 /**
- * Placeholder visual for a case-study screen. Designed to be swapped for a real
- * screenshot (next/image) once approved assets are added to
- * /public/images/case-studies/.
+ * Screenshot card for case-study screens. Falls back to a lightweight
+ * placeholder if an approved image has not been added yet.
  */
-export default function MockupCard({ mockup }: { mockup: CaseStudyMockup }) {
+export default function MockupCard({
+  mockup,
+  variant = "standard",
+}: {
+  mockup: CaseStudyMockup;
+  variant?: MockupCardVariant;
+}) {
   return (
-    <div className="glow-border group relative overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white/[0.02] p-4 transition-transform duration-300 hover:-translate-y-1">
-      <div className="mb-3 flex items-center gap-1.5">
+    <div
+      className={`glow-border group relative overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white/[0.02] transition-transform duration-300 hover:-translate-y-1 ${cardClassByVariant[variant]}`}
+    >
+      <div className="mb-3 flex items-center gap-1.5 sm:mb-4">
         <span className="h-2 w-2 rounded-full bg-white/20" />
         <span className="h-2 w-2 rounded-full bg-white/20" />
         <span className="h-2 w-2 rounded-full bg-white/20" />
       </div>
-      <div className="relative h-32 overflow-hidden rounded-lg bg-[linear-gradient(135deg,rgba(91,140,255,0.22),rgba(164,114,255,0.16))]">
+      <div
+        className={`relative overflow-hidden rounded-xl bg-[linear-gradient(135deg,rgba(91,140,255,0.22),rgba(164,114,255,0.16))] ${imageClassByVariant[variant]}`}
+      >
         {mockup.image ? (
           <Image
             src={mockup.image}
             alt={`${mockup.label} screenshot`}
             fill
-            sizes="(min-width: 1024px) 25vw, 50vw"
+            sizes={
+              variant === "hero"
+                ? "(min-width: 1024px) 70vw, 100vw"
+                : "(min-width: 1024px) 34vw, 100vw"
+            }
             className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -31,8 +58,10 @@ export default function MockupCard({ mockup }: { mockup: CaseStudyMockup }) {
           </>
         )}
       </div>
-      <h3 className="mt-4 text-sm font-semibold tracking-tight">{mockup.label}</h3>
-      <p className="mt-1 text-xs leading-relaxed text-[var(--color-mist)]">
+      <h3 className="mt-4 text-sm font-semibold tracking-tight sm:text-base">
+        {mockup.label}
+      </h3>
+      <p className="mt-1 text-xs leading-relaxed text-[var(--color-mist)] sm:text-sm">
         {mockup.caption}
       </p>
     </div>

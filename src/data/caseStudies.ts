@@ -53,9 +53,9 @@ export const caseStudies: CaseStudy[] = [
         image: "/images/case-studies/gym-vibe-cafe/homepage.png",
       },
       {
-        label: "Menu",
-        caption: "Interactive, mobile-first menu browsing",
-        image: "/images/case-studies/gym-vibe-cafe/menu.png",
+        label: "Menu system",
+        caption: "Category browsing with visible items and pricing",
+        image: "/images/case-studies/gym-vibe-cafe/menu-system.png",
       },
       {
         label: "Location",
@@ -66,11 +66,6 @@ export const caseStudies: CaseStudy[] = [
         label: "Meal Prep",
         caption: "Dedicated meal-prep promotion",
         image: "/images/case-studies/gym-vibe-cafe/meal-prep.png",
-      },
-      {
-        label: "Mobile view",
-        caption: "Designed mobile-first from the start",
-        image: "/images/case-studies/gym-vibe-cafe/mobile-homepage.png",
       },
     ],
     featured: true,

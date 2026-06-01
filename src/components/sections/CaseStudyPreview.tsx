@@ -8,6 +8,7 @@ import { featuredCaseStudies } from "@/data/caseStudies";
 export default function CaseStudyPreview() {
   const study = featuredCaseStudies[0];
   if (!study) return null;
+  const [featuredMockup, ...supportingMockups] = study.mockups;
 
   return (
     <section className="section" id="work">
@@ -18,7 +19,7 @@ export default function CaseStudyPreview() {
           description={study.summary}
         />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="mt-14 grid gap-10 lg:grid-cols-[0.85fr_1.35fr] lg:items-center">
           <Reveal className="order-2 lg:order-1">
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-[var(--color-blue)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-blue)] animate-pulse-glow" />
@@ -52,11 +53,16 @@ export default function CaseStudyPreview() {
           </Reveal>
 
           <Reveal delay={120} className="order-1 lg:order-2">
-            <div className="grid grid-cols-2 gap-4">
-              {study.mockups.slice(0, 4).map((mockup) => (
-                <MockupCard key={mockup.label} mockup={mockup} />
-              ))}
-            </div>
+            {featuredMockup ? (
+              <div className="space-y-5">
+                <MockupCard mockup={featuredMockup} variant="hero" />
+                <div className="grid gap-5 sm:grid-cols-3">
+                  {supportingMockups.slice(0, 3).map((mockup) => (
+                    <MockupCard key={mockup.label} mockup={mockup} variant="large" />
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </Reveal>
         </div>
 

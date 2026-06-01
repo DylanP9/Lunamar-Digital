@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 export default function GymVibeCafeCaseStudy() {
   if (!study) notFound();
+  const [featuredMockup, ...supportingMockups] = study.mockups;
 
   return (
     <>
@@ -27,13 +28,18 @@ export default function GymVibeCafeCaseStudy() {
 
       <section className="section pt-4">
         <div className="container-x">
-          <Reveal>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-              {study.mockups.map((mockup) => (
-                <MockupCard key={mockup.label} mockup={mockup} />
-              ))}
-            </div>
-          </Reveal>
+          {featuredMockup ? (
+            <Reveal>
+              <div className="space-y-6">
+                <MockupCard mockup={featuredMockup} variant="hero" />
+                <div className="grid gap-6 md:grid-cols-3">
+                  {supportingMockups.map((mockup) => (
+                    <MockupCard key={mockup.label} mockup={mockup} variant="large" />
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ) : null}
           <Reveal>
             <p className="mt-6 text-center text-xs text-[var(--color-mistier)]">
               Screens shown are design concepts and prototypes, not final
