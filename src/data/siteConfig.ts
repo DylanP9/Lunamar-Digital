@@ -12,8 +12,13 @@ export const siteConfig = {
   description:
     "Lunamar Digital creates premium websites, SEO systems and digital marketing strategies that help businesses grow online.",
 
-  /** Canonical site URL. Update once the final domain is confirmed. */
-  url: "https://lunamardigital.co.uk",
+  /**
+   * Canonical site URL — must match where the site is actually served, since it
+   * drives canonical tags, OG image URLs, the sitemap and robots.
+   * TODO: switch to "https://lunamardigital.co.uk" once that custom domain is
+   * connected to this Vercel project.
+   */
+  url: "https://lunamar-digital.vercel.app",
 
   /** Contact email. Confirm the final domain-based address before launch. */
   email: "Lunamardigital1@outlook.com",

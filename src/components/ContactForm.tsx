@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { siteConfig } from "@/data/siteConfig";
 
 const serviceOptions = [
@@ -16,6 +19,17 @@ const fieldClass =
 const labelClass = "mb-2 block text-sm font-medium text-white/90";
 
 export default function ContactForm() {
+  const nextRef = useRef<HTMLInputElement>(null);
+
+  // Redirect back to the SAME origin the visitor is on (localhost, a Vercel
+  // preview URL, or the live domain) so the thank-you page always resolves.
+  // Falls back to siteConfig.url for no-JS submissions.
+  useEffect(() => {
+    if (nextRef.current) {
+      nextRef.current.value = `${window.location.origin}/thank-you`;
+    }
+  }, []);
+
   return (
     <form action={formAction} method="POST" className="space-y-5">
       <input
@@ -25,7 +39,12 @@ export default function ContactForm() {
       />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="true" />
-      <input type="hidden" name="_next" value={`${siteConfig.url}/thank-you`} />
+      <input
+        ref={nextRef}
+        type="hidden"
+        name="_next"
+        defaultValue={`${siteConfig.url}/thank-you`}
+      />
       {/* Honeypot — bots fill this; real users never see it. */}
       <input
         type="text"
