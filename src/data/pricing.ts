@@ -31,6 +31,25 @@ export const pricingPlans: PricingPlan[] = [
     term: "12-month minimum term",
   },
   {
+    id: "web-seo",
+    name: "Advanced Web & SEO",
+    price: "£249",
+    cadence: "/month",
+    badge: "Web-Only",
+    bestFor:
+      "Businesses that want a larger, premium website and advanced SEO — without social media. Pay only for the high-intent Google traffic you actually want.",
+    features: [
+      "Up to 10 pages",
+      "Custom layouts (FAQs, Team, Portfolio)",
+      "Deep local SEO (keyword mapping + schema)",
+      "Google Business Profile optimisation",
+      "Speed & performance optimisation",
+      "Ongoing technical maintenance",
+      "No social media — Google-focused growth",
+    ],
+    term: "12-month minimum term",
+  },
+  {
     id: "grow",
     name: "Grow",
     price: "£399",
@@ -39,10 +58,8 @@ export const pricingPlans: PricingPlan[] = [
     bestFor:
       "Businesses that want a proper website and a consistent social presence.",
     features: [
-      "Multi-page website",
-      "Stronger SEO setup",
-      "Website maintenance included",
-      "Up to 8 social posts per month",
+      "Everything in Advanced Web & SEO, plus:",
+      "Up to 4 social posts per month",
       "Captions and hashtags",
       "Instagram / Facebook scheduling",
       "Monthly offer / service / menu highlight",
@@ -62,8 +79,7 @@ export const pricingPlans: PricingPlan[] = [
       "Businesses that want website, SEO, social media and ongoing growth support.",
     features: [
       "Everything in Grow, plus:",
-      "SEO and social media management",
-      "12+ social posts per month",
+      "8+ social posts per month",
       "Short-form video / reels from supplied clips",
       "Campaign planning",
       "Conversion improvements",
@@ -79,43 +95,71 @@ export const pricingPlans: PricingPlan[] = [
 export const comparisonFeatures: { label: string; plans: Record<string, string> }[] = [
   {
     label: "Monthly price",
-    plans: { core: "£149", grow: "£399", partner: "From £799" },
+    plans: { core: "£149", "web-seo": "£249", grow: "£399", partner: "From £799" },
   },
   {
     label: "Website",
-    plans: { core: "1–3 pages", grow: "Multi-page", partner: "Multi-page +" },
+    plans: {
+      core: "1–3 pages",
+      "web-seo": "Up to 10 pages",
+      grow: "Up to 10 pages",
+      partner: "Up to 10 pages +",
+    },
+  },
+  {
+    label: "Custom layouts (FAQ / Team / Portfolio)",
+    plans: { core: "—", "web-seo": "Included", grow: "Included", partner: "Included" },
   },
   {
     label: "SEO setup",
-    plans: { core: "Basic", grow: "Stronger", partner: "Advanced + ongoing" },
+    plans: {
+      core: "Basic",
+      "web-seo": "Deep local SEO",
+      grow: "Deep local SEO",
+      partner: "Advanced + ongoing",
+    },
+  },
+  {
+    label: "Schema & Google Business optimisation",
+    plans: { core: "—", "web-seo": "Included", grow: "Included", partner: "Included" },
   },
   {
     label: "Website maintenance",
-    plans: { core: "Small updates", grow: "Included", partner: "Priority" },
+    plans: {
+      core: "Small updates",
+      "web-seo": "Technical + updates",
+      grow: "Included",
+      partner: "Priority",
+    },
   },
   {
     label: "Social posts / month",
-    plans: { core: "—", grow: "Up to 8", partner: "12+" },
+    plans: { core: "—", "web-seo": "—", grow: "Up to 4", partner: "8+" },
   },
   {
     label: "Short-form video / reels",
-    plans: { core: "—", grow: "—", partner: "From supplied clips" },
+    plans: { core: "—", "web-seo": "—", grow: "—", partner: "From supplied clips" },
   },
   {
     label: "Campaign planning",
-    plans: { core: "—", grow: "—", partner: "Included" },
+    plans: { core: "—", "web-seo": "—", grow: "—", partner: "Included" },
   },
   {
     label: "Monthly reporting",
-    plans: { core: "—", grow: "Basic summary", partner: "Full reporting" },
+    plans: { core: "—", "web-seo": "—", grow: "Basic summary", partner: "Full reporting" },
   },
   {
     label: "Optional paid ads",
-    plans: { core: "—", grow: "—", partner: "Spend billed separately" },
+    plans: { core: "—", "web-seo": "—", grow: "—", partner: "Spend billed separately" },
   },
   {
     label: "Minimum term",
-    plans: { core: "12 months", grow: "Site 12m · Social 3m", partner: "12 months" },
+    plans: {
+      core: "12 months",
+      "web-seo": "12 months",
+      grow: "Site 12m · Social 3m",
+      partner: "12 months",
+    },
   },
 ];
 

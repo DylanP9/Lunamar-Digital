@@ -104,13 +104,19 @@ Content lives in **`src/data/`** — avoid hard-coding copy in components.
 
 ### Pricing model
 
-Public pricing is **three tiers** (all monthly, no upfront website cost):
+Public pricing is **four tiers** (all monthly, no upfront website cost):
 
 | Plan | Price | For |
 | --- | --- | --- |
 | **Core Website** | £149/month | Clean, mobile-friendly website + basic presence |
-| **Grow** (recommended) | £399/month | Website + consistent social presence |
-| **Partner** | from £799/month | Website, SEO, social + ongoing growth support |
+| **Advanced Web & SEO** (Web-Only) | £249/month | Larger premium website + deep SEO, **no social media** |
+| **Grow** (recommended) | £399/month | Advanced Web & SEO + up to 4 social posts/month |
+| **Partner** | from £799/month | Grow + 8+ social posts, reels, campaigns, reporting |
+
+> **Web-Only positioning:** Advanced Web & SEO (£249) is the bridge tier for
+> prospects who reject social media marketing. Frame it as *"pay only for the
+> high-intent Google traffic you actually want, without paying for social
+> channels you don't use."*
 
 Key terms: 12-month minimum on website plans (3-month minimum on social add-ons);
 billing starts 30 days after onboarding; client owns domain/logo/content while

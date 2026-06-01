@@ -6,7 +6,7 @@ import { pricingPlans } from "@/data/pricing";
 export default function PricingGrid() {
   return (
     <>
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {pricingPlans.map((plan, i) => (
           <Reveal key={plan.id} delay={i * 60} className="h-full">
             <PricingCard plan={plan} />

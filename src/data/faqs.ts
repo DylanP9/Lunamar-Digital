@@ -35,6 +35,11 @@ export const faqs: Faq[] = [
       "Yes. Every website includes SEO foundations, with more advanced on-page and local SEO available on higher plans so the right customers can find you.",
   },
   {
+    question: "Can I get a bigger website and strong SEO without social media?",
+    answer:
+      "Yes — that's exactly what our Advanced Web & SEO plan (£249/month) is for. You get a larger website (up to 10 pages), custom layouts, deep local SEO with keyword mapping and schema, Google Business Profile optimisation and ongoing technical maintenance — with no social media. It's ideal if you want to pay only for the high-intent Google traffic you actually want, without paying for social channels you don't use.",
+  },
+  {
     question: "Are paid ads included?",
     answer:
       "Paid ad management can be discussed, but ad spend is always separate from the monthly management fee. You keep full control of your advertising budget.",
