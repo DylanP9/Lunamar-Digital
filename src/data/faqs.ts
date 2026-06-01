@@ -12,22 +12,22 @@ export const faqs: Faq[] = [
   {
     question: "How does the no-upfront website model work?",
     answer:
-      "Instead of paying a large upfront build fee, businesses pay a monthly membership that includes the website, hosting, maintenance and small updates. You launch a professional website without a big initial outlay.",
+      "Instead of paying thousands upfront for a website, you launch with a professional website and ongoing support through one simple monthly plan that includes the build, hosting support, maintenance and small updates. Billing begins 30 days after onboarding, even if content or assets are delayed.",
   },
   {
     question: "Is there a minimum term?",
     answer:
-      "Website plans are based on a 12-month minimum term. Social media add-ons use a shorter 3-month minimum, depending on the package.",
+      "Website plans are based on a 12-month minimum term. Social media add-ons use a shorter 3-month minimum. If you cancel a website plan early, the remaining contract balance or an agreed buyout fee applies.",
   },
   {
     question: "What updates are included?",
     answer:
-      "Small content updates such as text, images, prices, services, opening hours and links are included each month. Larger redesigns, new features and integrations are quoted separately.",
+      "Small content updates — text, images, prices, services, opening hours, links and small promo changes — are included, typically up to around 2 hours a month unless your plan states otherwise. We don't offer unlimited updates or unlimited redesigns. Major redesigns, new pages, booking, ordering, payment systems and custom integrations are quoted separately.",
   },
   {
     question: "Do you manage social media?",
     answer:
-      "Yes. Our social plans cover planned posts, captions, hashtags, scheduling, story content and monthly highlights, with reels and analytics summaries on higher tiers.",
+      "Yes, on the Grow and Partner plans. We plan posts, captions, hashtags and scheduling from content you supply (photo or video shoots are quoted separately). Posts are approved in batches — if no edits are requested within 72 hours, they may be scheduled as prepared. We don't guarantee a specific number of followers or engagement.",
   },
   {
     question: "Do you offer SEO?",
@@ -45,9 +45,14 @@ export const faqs: Faq[] = [
       "Payment, ordering, booking and custom integrations can be built where needed, but they are scoped and quoted separately from the standard monthly plans.",
   },
   {
-    question: "Who owns the domain?",
+    question: "Who owns the domain and the website?",
     answer:
-      "You do. Your domain and brand are yours. We help set up and connect everything, and you keep ownership of your domain name.",
+      "You own your domain, logo, photos and business content — always. Lunamar Digital owns the website design and code until the 12-month minimum term is completed or a buyout fee is paid, after which it can be transferred to you.",
+  },
+  {
+    question: "Do you guarantee results?",
+    answer:
+      "No honest agency can guarantee specific sales, search rankings, enquiries, followers or revenue. What we do is build the websites, SEO foundations and content systems that make it easier for customers to find you, trust you and take action.",
   },
   {
     question: "How do we get started?",

@@ -4,7 +4,7 @@ Premium marketing website for **Lunamar Digital** — a digital agency offering
 websites, SEO and marketing through simple monthly membership plans.
 
 > **Tagline:** Websites. Marketing. Growth.
-> **Sales hook:** No-upfront websites and digital growth plans from £97/month.
+> **Sales hook:** No-upfront websites and digital growth plans from £149/month.
 
 ---
 
@@ -102,12 +102,39 @@ Content lives in **`src/data/`** — avoid hard-coding copy in components.
 | Navigation & CTAs                | `src/data/navigation.ts`   |
 | Contact, domain, socials, OG     | `src/data/siteConfig.ts`   |
 
+### Pricing model
+
+Public pricing is **three tiers** (all monthly, no upfront website cost):
+
+| Plan | Price | For |
+| --- | --- | --- |
+| **Core Website** | £149/month | Clean, mobile-friendly website + basic presence |
+| **Grow** (recommended) | £399/month | Website + consistent social presence |
+| **Partner** | from £799/month | Website, SEO, social + ongoing growth support |
+
+Key terms: 12-month minimum on website plans (3-month minimum on social add-ons);
+billing starts 30 days after onboarding; client owns domain/logo/content while
+Lunamar owns the site code until the term completes or a buyout fee is paid;
+small updates are fair-use (~2 hrs/month); paid ad spend, content shoots and
+ordering/payment systems are quoted separately. No guarantees of sales,
+rankings or followers.
+
+**Founding client rate (internal only):** £97/month may be offered **privately**
+to the first few clients, with a 12-month minimum term. It is **not** the public
+baseline offer and must not be published as a standard package. A subtle
+"by invitation" note appears on the pricing page via `foundingRateNote`.
+
 ### Update pricing
 
 Edit the `pricingPlans` array in `src/data/pricing.ts`. The same data powers the
 homepage pricing section, the pricing page cards and the comparison table (update
-`comparisonFeatures` too if you add/rename a plan). `included`, `notIncluded`
-and `terms` drive the pricing-page detail blocks.
+`comparisonFeatures` too if you add/rename a plan). `included`, `notIncluded`,
+`terms` and `foundingRateNote` drive the pricing-page detail blocks. Plan labels
+also appear in the contact form's package dropdown (`src/components/ContactForm.tsx`).
+
+> The previous 6-tier structure (Starter/Standard/Plus/Social Growth/Social
+> Plus/Premium) has been retired from public pages. If you need it for reference,
+> recover it from git history — it is intentionally no longer in the data files.
 
 ### Update services
 
@@ -180,6 +207,53 @@ reply straight from Outlook.
 
 ---
 
+## Client templates & first-client process
+
+Reusable business templates live in **`docs/client-templates/`**:
+
+| File | Purpose |
+| --- | --- |
+| `client-proposal-template.md` | Per-client proposal (summary, goals, recommended package, pricing, next steps) |
+| `client-agreement-template.md` | Draft service agreement — **review with a legal professional before use** |
+| `onboarding-checklist.md` | Details to capture once a client signs |
+| `asset-request-checklist.md` | Everything to collect from the client to build/launch |
+| `project-scope-template.md` | Agreed scope: pages, features, exclusions, milestones |
+| `gym-vibe-cafe-first-client-checklist.md` | Live checklist for our first active client |
+
+These are **draft business documents, not legal advice**, and are not
+solicitor-approved.
+
+### How to create a client proposal
+1. Copy `client-proposal-template.md`, rename it for the client.
+2. Fill in the bracketed fields; recommend Core, Grow or Partner.
+3. List included pages/features and what's quoted separately.
+4. Send it as the offer (the signed agreement governs the engagement).
+
+### How to onboard a client
+1. Client confirms package + monthly price.
+2. Complete and **sign the client agreement** (clauses reviewed beforehand).
+3. Set up payment; record the billing start date (Start Date + 30 days).
+4. Send the asset request checklist and work through `onboarding-checklist.md`.
+
+### What must be signed before work starts
+- Signed `client-agreement-template.md`
+- Confirmed package and monthly price
+- Payment method set up
+
+### What must be collected before launch
+- All items in `asset-request-checklist.md` (logo, photos, content, prices,
+  hours, domain/DNS access)
+- Approvals at each milestone in `project-scope-template.md`
+
+### Launch checklist
+Domain connected → SEO foundations in place → performance check → forms/contact
+tested → analytics connected (if agreed) → client sign-off → go live.
+
+> **Legal review:** the agreement template is a starting point only. Have a
+> qualified professional review it before using it with real clients.
+
+---
+
 ## Deploy
 
 This is a static-first Next.js app and deploys cleanly to **Vercel**
@@ -212,9 +286,11 @@ required for the current (static) build.
 - [ ] Confirm business **email** (update `siteConfig.email`)
 - [ ] Confirm business **phone** (if using one)
 - [ ] Confirm **social handles** (update `siteConfig.socials` hrefs)
+- [ ] **Confirm the three public prices** (Core £149 / Grow £399 / Partner from £799) before publishing
+- [ ] Decide who, if anyone, gets the private **founding rate** (£97/mo, by invitation)
 - [ ] Finalise legal/business structure & **privacy policy** wording
-- [ ] Finalise package wording & **contract terms**; create client agreement
-- [ ] Create proposal template
+- [ ] **Legal review** of `docs/client-templates/client-agreement-template.md` before any client signs
+- [ ] Finalise package wording & contract terms
 - [ ] Add **real logo** assets and a **1200×630 OG image**
 - [ ] Add **real case-study screenshots** (and team photos if wanted)
 - [ ] Add the **Web3Forms access key** to `.env.local` + host env (see "Contact form")
@@ -225,6 +301,8 @@ required for the current (static) build.
 ## Launch checklist
 
 - [ ] `npm run build` and `npm run lint` pass
+- [ ] Public pricing confirmed (Core / Grow / Partner) — founding rate kept private
+- [ ] Client agreement template legally reviewed
 - [ ] `siteConfig` values confirmed (domain, email, socials)
 - [ ] Real logo + OG image in place
 - [ ] Case-study content client-approved (Gym Vibe Café status accurate)

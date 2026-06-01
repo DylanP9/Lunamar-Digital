@@ -20,7 +20,7 @@ export const siteConfig = {
   domain: "lunamardigital.co.uk",
 
   /** Headline sales hook reused across the site. */
-  hook: "No-upfront websites and digital growth plans from £97/month.",
+  hook: "No-upfront websites and digital growth plans from £149/month.",
 
   /** Social profile placeholders. Replace href values when handles are live. */
   socials: [

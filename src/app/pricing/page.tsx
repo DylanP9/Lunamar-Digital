@@ -5,13 +5,13 @@ import ComparisonTable from "@/components/ComparisonTable";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
 import ContactCTA from "@/components/sections/ContactCTA";
-import { included, notIncluded, terms } from "@/data/pricing";
+import { included, notIncluded, terms, foundingRateNote } from "@/data/pricing";
 import { faqs } from "@/data/faqs";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Transparent monthly website and digital growth plans from £97/month. No upfront website cost — see what's included and compare every Lunamar Digital plan.",
+    "Transparent monthly website and digital growth plans from £149/month. No upfront website cost — compare the Core, Grow and Partner plans from Lunamar Digital.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -21,12 +21,17 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="Monthly plans, no upfront website cost."
-        description="Launch with a professional website and ongoing support through a simple monthly membership — from £97/month. Everything below is transparent, with no hidden build fees."
+        description="Instead of paying thousands upfront for a website, launch with a professional website and ongoing support through a simple monthly plan — from £149/month. Three clear tiers, no hidden build fees."
       />
 
       <section className="section pt-0">
         <div className="container-x">
           <PricingGrid />
+          <Reveal className="mt-8 flex justify-center">
+            <p className="max-w-2xl rounded-full border border-[var(--color-line)] bg-white/[0.02] px-5 py-3 text-center text-xs text-[var(--color-mistier)]">
+              {foundingRateNote}
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -35,7 +40,7 @@ export default function PricingPage() {
           <SectionHeader
             eyebrow="Compare"
             title="Every plan, side by side"
-            description="Scroll to compare what's included across all six plans."
+            description="Compare what's included across Core, Grow and Partner."
           />
           <Reveal className="mt-12">
             <ComparisonTable />

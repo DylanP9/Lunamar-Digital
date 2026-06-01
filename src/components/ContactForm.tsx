@@ -5,12 +5,9 @@ import { siteConfig } from "@/data/siteConfig";
 
 const packageOptions = [
   "Not sure yet",
-  "Website Starter (£97/mo)",
-  "Website Standard (£127/mo)",
-  "Website Plus (£197/mo)",
-  "Website + Social Growth (£249/mo)",
-  "Website + Social Plus (£399/mo)",
-  "Premium Growth Partner (from £599/mo)",
+  "Core Website (£149/mo)",
+  "Grow (£399/mo)",
+  "Partner (from £799/mo)",
 ];
 
 /**

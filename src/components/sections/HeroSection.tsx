@@ -45,7 +45,7 @@ export default function HeroSection() {
 
           <p className="mt-6 text-sm text-[var(--color-mistier)]">
             No upfront website cost · Plans from{" "}
-            <span className="tabular text-white/80">£97</span>/month
+            <span className="tabular text-white/80">£149</span>/month
           </p>
         </div>
       </div>
