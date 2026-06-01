@@ -61,6 +61,14 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      setStatus("idle");
+      setMessage("Please complete the required fields before sending.");
+      return;
+    }
+
     const data = new FormData(form);
     const get = (k: string) => ((data.get(k) as string) ?? "").trim();
 
@@ -118,7 +126,7 @@ export default function ContactForm() {
   const submitting = status === "submitting";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClass}>
@@ -150,7 +158,7 @@ export default function ContactForm() {
         <label htmlFor="link" className={labelClass}>
           Website or social link <span className="text-[var(--color-mistier)]">(optional)</span>
         </label>
-        <input id="link" name="link" className={fieldClass} placeholder="https://" />
+        <input id="link" name="link" type="url" className={fieldClass} placeholder="https://" />
       </div>
 
       <div>

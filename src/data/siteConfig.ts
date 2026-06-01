@@ -29,8 +29,8 @@ export const siteConfig = {
     { label: "LinkedIn", href: "#", handle: "Lunamar Digital" },
   ],
 
-  /** OpenGraph image lives in /public; replace with branded artwork later. */
-  ogImage: "/og.svg",
+  /** Branded OpenGraph image lives in /public. */
+  ogImage: "/og.png",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

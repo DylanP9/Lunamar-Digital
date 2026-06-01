@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     heading: "Overview",
-    body: "This is a simple, plain-English summary of how Lunamar Digital handles information. It is intended to be clear and editable, and it is not legal advice. We recommend confirming a final privacy policy with a suitable professional before launch.",
+    body: "This plain-English summary explains how Lunamar Digital handles the limited information you share with us through this website.",
   },
   {
     heading: "Contact information",
