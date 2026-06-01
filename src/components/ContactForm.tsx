@@ -6,6 +6,7 @@ import { siteConfig } from "@/data/siteConfig";
 const packageOptions = [
   "Not sure yet",
   "Core Website (£149/mo)",
+  "Advanced Web & SEO (£249/mo)",
   "Grow (£399/mo)",
   "Partner (from £799/mo)",
 ];
