@@ -6,8 +6,7 @@ const serviceOptions = [
   "Partner (from £799/mo)",
 ];
 
-// TODO: replace TODO_EMAIL_HERE with the correct Lunamar Digital inbox email.
-const formAction = "https://formsubmit.co/TODO_EMAIL_HERE";
+const formAction = "https://formsubmit.co/Lunamardigital1@outlook.com";
 
 const fieldClass =
   "w-full rounded-xl border border-[var(--color-line)] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-[var(--color-mistier)] transition-colors focus:border-[var(--color-blue)] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-blue)]";
