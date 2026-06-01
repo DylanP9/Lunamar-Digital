@@ -21,7 +21,7 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="Monthly plans, no upfront website cost."
-        description="Instead of paying thousands upfront for a website, launch with a professional website and ongoing support through a simple monthly plan — from £149/month. Three clear tiers, no hidden build fees."
+        description="Instead of paying thousands upfront for a website, launch with a professional website and ongoing support through a simple monthly plan — from £149/month. Four clear tiers, no hidden build fees."
       />
 
       <section className="section pt-0">

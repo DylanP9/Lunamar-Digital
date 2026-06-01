@@ -9,7 +9,7 @@ export default function PricingSection() {
       <div className="container-x">
         <SectionHeader
           eyebrow="Pricing"
-          title="Three plans. No upfront website cost."
+          title="Four plans. No upfront website cost."
           description="Instead of paying thousands upfront, launch with a professional website and ongoing support through one simple monthly plan — from £149/month."
         />
         <div className="mt-14">
