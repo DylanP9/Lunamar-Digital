@@ -39,6 +39,14 @@ export default function OutcomesSection() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-[var(--color-mistier)]">
+            We can&apos;t promise overnight results — no honest agency can. What
+            we can do is build the systems that make it easier for customers to
+            find you, trust you and take action.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

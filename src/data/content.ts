@@ -83,10 +83,11 @@ export const deepDives: DeepDive[] = [
 /** Outcome-driven cards (no fabricated statistics). */
 export const outcomes: string[] = [
   "More enquiries",
-  "Clearer customer journeys",
-  "Better first impressions",
+  "More calls",
+  "More bookings",
+  "More visits",
+  "Better first impression",
   "Stronger search visibility",
   "Easier updates",
   "Better mobile experience",
-  "More trust before the sale",
 ];

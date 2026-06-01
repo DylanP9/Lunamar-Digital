@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #04050a;
-  --color-ink-soft: #080a12;
-  --color-panel: #0c0e18;
+  /* Tinted deep-navy base — not pure black, less "neon space". */
+  --color-ink: #070912;
+  --color-ink-soft: #0b0e1a;
+  --color-panel: #10131f;
   --color-line: rgba(255, 255, 255, 0.08);
   --color-line-strong: rgba(255, 255, 255, 0.16);
-  --color-mist: rgba(255, 255, 255, 0.72);
-  --color-mistier: rgba(255, 255, 255, 0.58);
+  --color-mist: rgba(232, 236, 247, 0.74);
+  --color-mistier: rgba(232, 236, 247, 0.56);
 
-  --color-blue: #5b8cff;
-  --color-blue-deep: #3461ff;
-  --color-purple: #a472ff;
-  --color-purple-deep: #7c3aed;
+  /* One disciplined accent (blue) with a restrained purple support. */
+  --color-blue: #6f9bff;
+  --color-blue-deep: #3f6bff;
+  --color-purple: #9d7bff;
+  --color-purple-deep: #7c4dff;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -45,16 +47,16 @@ body {
   overflow-x: hidden;
 }
 
-/* Ambient page background: deep space with blue/purple glow + subtle noise. */
+/* Ambient page background: one controlled glow from the top, plus a faint
+   lower accent. Deliberately restrained — depth, not a neon light show. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(60% 50% at 50% -10%, rgba(124, 58, 237, 0.22), transparent 70%),
-    radial-gradient(50% 40% at 85% 10%, rgba(52, 97, 255, 0.18), transparent 70%),
-    radial-gradient(40% 40% at 10% 30%, rgba(164, 114, 255, 0.12), transparent 70%),
+    radial-gradient(70% 45% at 50% -8%, rgba(63, 107, 255, 0.16), transparent 60%),
+    radial-gradient(45% 35% at 88% 8%, rgba(124, 77, 255, 0.1), transparent 60%),
     var(--color-ink);
 }
 
@@ -123,14 +125,18 @@ body::after {
 }
 
 .text-gradient {
-  background: linear-gradient(120deg, #fff 20%, #b9ccff 55%, #c9b4ff 90%);
+  background: linear-gradient(115deg, #ffffff 30%, #c5d4ff 75%, #b9a8ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
 .section {
-  padding-block: clamp(4rem, 9vw, 8rem);
+  padding-block: clamp(4.5rem, 9vw, 9rem);
 }
 
 .container-x {

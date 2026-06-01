@@ -28,7 +28,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
       </h3>
 
       <div className="mt-3 flex items-baseline gap-1">
-        <span className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight">
+        <span className="tabular font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight">
           {plan.price}
         </span>
         <span className="text-sm text-[var(--color-mist)]">{plan.cadence}</span>

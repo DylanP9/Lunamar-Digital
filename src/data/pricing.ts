@@ -63,7 +63,7 @@ export const pricingPlans: PricingPlan[] = [
     name: "Website + Social Growth",
     price: "£249",
     cadence: "/month",
-    badge: "Website + Social",
+    badge: "Growth Pick",
     bestFor: "Website and social presence managed together.",
     features: [
       "Website Standard included",

@@ -27,6 +27,17 @@ export default function ServicesSection() {
                 <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-mist)]">
                   {service.summary}
                 </p>
+                <ul className="mt-5 space-y-2 border-t border-[var(--color-line)] pt-5">
+                  {service.points.slice(0, 3).map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-2.5 text-xs text-[var(--color-mistier)]"
+                    >
+                      <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-[var(--color-blue)]" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </article>
             </Reveal>
           ))}

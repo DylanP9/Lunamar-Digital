@@ -1,31 +1,30 @@
 import Button from "@/components/Button";
 import OrbitalBackground from "@/components/OrbitalBackground";
-import { primaryCta, secondaryCta } from "@/data/navigation";
+import { primaryCta } from "@/data/navigation";
 import { siteConfig } from "@/data/siteConfig";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-28 pb-20">
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-32 pb-24">
       <OrbitalBackground />
 
       <div className="container-x relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           <div
             data-reveal
-            className="is-visible mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-white/[0.03] px-4 py-1.5 text-xs font-medium text-[var(--color-mist)]"
+            className="is-visible mb-7 inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-white/[0.03] px-4 py-1.5 text-xs font-medium text-[var(--color-mist)]"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-blue)] animate-pulse-glow" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-blue)]" />
             {siteConfig.hook}
           </div>
 
-          <h1 className="font-[family-name:var(--font-display)] text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl md:text-7xl">
-            <span className="text-gradient">Digital systems</span>
-            <br />
-            built for growth.
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.6rem,7vw,4.75rem)] font-semibold leading-[1.03] tracking-[-0.03em] text-balance">
+            <span className="text-gradient">Digital systems</span> built for
+            growth.
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[var(--color-mist)] sm:text-lg text-pretty">
-            Lunamar Digital creates websites, SEO systems and marketing
+            Lunamar Digital builds websites, SEO systems and marketing
             strategies that help businesses turn online attention into real
             customers.
           </p>
@@ -35,66 +34,31 @@ export default function HeroSection() {
               {primaryCta.label}
             </Button>
             <Button
-              href={secondaryCta.href}
+              href="/pricing"
               variant="secondary"
               size="lg"
               className="w-full sm:w-auto"
             >
-              {secondaryCta.label}
+              View pricing
             </Button>
           </div>
-        </div>
 
-        {/* Floating website mockup cards */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none relative mx-auto mt-20 hidden max-w-5xl md:block"
-        >
-          <div className="absolute -left-2 top-6 w-56 rotate-[-6deg] animate-float [animation-delay:-2s]">
-            <MockupGlass label="Homepage" />
-          </div>
-          <div className="absolute -right-2 top-0 w-56 rotate-[6deg] animate-float [animation-delay:-4s]">
-            <MockupGlass label="Analytics" tint="purple" />
-          </div>
-          <div className="mx-auto w-80 animate-float">
-            <MockupGlass label="Your website" feature />
-          </div>
+          <p className="mt-6 text-sm text-[var(--color-mistier)]">
+            No upfront website cost · Plans from{" "}
+            <span className="tabular text-white/80">£97</span>/month
+          </p>
         </div>
+      </div>
+
+      {/* Scroll cue */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 sm:block"
+      >
+        <span className="flex h-9 w-5 items-start justify-center rounded-full border border-[var(--color-line-strong)] p-1.5">
+          <span className="h-1.5 w-1 rounded-full bg-[var(--color-mist)] animate-float" />
+        </span>
       </div>
     </section>
-  );
-}
-
-function MockupGlass({
-  label,
-  feature,
-  tint = "blue",
-}: {
-  label: string;
-  feature?: boolean;
-  tint?: "blue" | "purple";
-}) {
-  return (
-    <div
-      className={`glass rounded-2xl p-3 ${
-        feature ? "shadow-[var(--shadow-glow)]" : ""
-      }`}
-    >
-      <div className="mb-3 flex items-center gap-1.5">
-        <span className="h-2 w-2 rounded-full bg-white/20" />
-        <span className="h-2 w-2 rounded-full bg-white/20" />
-        <span className="h-2 w-2 rounded-full bg-white/20" />
-      </div>
-      <div
-        className={`h-20 rounded-lg bg-[linear-gradient(120deg,rgba(91,140,255,0.25),rgba(164,114,255,0.18))] ${
-          tint === "purple" ? "opacity-80" : ""
-        }`}
-      />
-      <div className="mt-3 h-2 w-2/3 rounded-full bg-white/15" />
-      <div className="mt-2 h-2 w-1/2 rounded-full bg-white/10" />
-      <p className="mt-3 text-[0.7rem] font-medium uppercase tracking-[0.12em] text-[var(--color-mistier)]">
-        {label}
-      </p>
-    </div>
   );
 }
