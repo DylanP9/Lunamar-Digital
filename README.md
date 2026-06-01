@@ -183,33 +183,27 @@ don't render SVG OG images. Update `siteConfig.ogImage` if you change the path.
 
 ## Contact form
 
-The contact form (`src/components/ContactForm.tsx`) submits via **Web3Forms** —
-a no-backend service that emails submissions to the inbox tied to your access
-key (currently **Lunamardigital1@outlook.com**). No server, database or API
-route is required, so it works on static hosting / Vercel.
+The contact form (`src/components/ContactForm.tsx`) submits via **FormSubmit** —
+a no-backend service that emails submissions to your inbox. **No API key, server,
+database or env var is required**, so it works on static hosting / Vercel. The
+destination address comes from `siteConfig.email`
+(currently **Lunamardigital1@outlook.com**).
 
-**To activate it:**
+**To activate it (one-time):**
 
-1. Go to [web3forms.com](https://web3forms.com) and enter
-   `Lunamardigital1@outlook.com` as the destination — you'll be emailed a free
-   access key.
-2. Paste it into `.env.local`:
-   ```
-   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your-key-here
-   ```
-3. Restart `npm run dev` (locally) and add the same env var in your host's
-   project settings (e.g. Vercel → Settings → Environment Variables) for
-   production.
+1. Deploy the site (or run it) and submit the form once.
+2. FormSubmit emails that address a confirmation/activation link — click it once.
+3. From then on, submissions are delivered to the inbox.
 
-**Fallback:** if the key is missing, the form gracefully opens the visitor's own
-email app with the details prefilled instead of failing. Spam is reduced with a
-hidden honeypot field. The `replyto` is set to the enquirer's email, so you can
-reply straight from Outlook.
+Details:
+- Spam protection via FormSubmit's captcha (`_captcha`) plus a `_honey` honeypot.
+- After submitting, users are redirected to `/thank-you` (`_next` hidden field,
+  built from `siteConfig.url` — make sure that matches the live domain).
+- To change the destination, update `siteConfig.email`; the form action is built
+  from it.
 
-> The `NEXT_PUBLIC_` prefix means the key is visible in the browser — this is
-> expected and supported by Web3Forms (the key only allows sending to your
-> chosen inbox). To swap providers (Formspree, Resend, a route handler), replace
-> the `fetch` call in `handleSubmit`.
+> To swap providers (Formspree, Resend, a route handler), change the `formAction`
+> in `ContactForm.tsx`.
 
 ---
 
@@ -299,7 +293,7 @@ required for the current (static) build.
 - [ ] Finalise package wording & contract terms
 - [ ] Add **real logo** assets and a **1200×630 OG image**
 - [ ] Add **real case-study screenshots** (and team photos if wanted)
-- [ ] Add the **Web3Forms access key** to `.env.local` + host env (see "Contact form")
+- [ ] **Activate FormSubmit** — submit the form once and click the confirmation email (see "Contact form")
 - [ ] Add **analytics** only after choosing a provider and a consent approach
 
 ---

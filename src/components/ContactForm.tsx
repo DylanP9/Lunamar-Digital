@@ -1,3 +1,5 @@
+import { siteConfig } from "@/data/siteConfig";
+
 const serviceOptions = [
   "Not sure yet",
   "Core Website (£149/mo)",
@@ -6,7 +8,8 @@ const serviceOptions = [
   "Partner (from £799/mo)",
 ];
 
-const formAction = "https://formsubmit.co/Lunamardigital1@outlook.com";
+// FormSubmit posts to the destination email (centralised in siteConfig).
+const formAction = `https://formsubmit.co/${siteConfig.email}`;
 
 const fieldClass =
   "w-full rounded-xl border border-[var(--color-line)] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-[var(--color-mistier)] transition-colors focus:border-[var(--color-blue)] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-blue)]";
@@ -22,8 +25,17 @@ export default function ContactForm() {
       />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="true" />
-      {/* TODO: create a thank-you page, then add a FormSubmit _next hidden field. */}
-      {/* TODO: use the first test submission to confirm the FormSubmit activation email. */}
+      <input type="hidden" name="_next" value={`${siteConfig.url}/thank-you`} />
+      {/* Honeypot — bots fill this; real users never see it. */}
+      <input
+        type="text"
+        name="_honey"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
+      {/* NOTE: submit the form once after deploy to confirm FormSubmit activation. */}
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>

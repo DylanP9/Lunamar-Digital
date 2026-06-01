@@ -15,7 +15,7 @@ const sections = [
   },
   {
     heading: "Contact information",
-    body: "When you submit the contact form, your details are sent to us by email through a third-party form service (Web3Forms) so we can receive and reply to your enquiry. We use this information only to respond to you. If the form service is unavailable, the form falls back to opening your own email application instead. The website itself does not store a database of your details.",
+    body: "When you submit the contact form, the details you enter are sent to us by email through a third-party form service (FormSubmit) so we can receive and reply to your enquiry. We use this information only to respond to you. The website itself does not store a database of your details. You can also email us directly instead of using the form.",
   },
   {
     heading: "Analytics",

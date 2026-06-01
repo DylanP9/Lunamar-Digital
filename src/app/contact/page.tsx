@@ -33,6 +33,26 @@ export default function ContactPage() {
             <div className="space-y-6">
               <div className="rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.02] p-6">
                 <h2 className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight">
+                  What happens next
+                </h2>
+                <ol className="mt-4 space-y-3">
+                  {[
+                    "We read your enquiry and reply, usually within one business day.",
+                    "For selected businesses, we put together a free preview concept.",
+                    "If it's a fit, we confirm a plan and get started — no upfront website cost.",
+                  ].map((step, i) => (
+                    <li key={step} className="flex items-start gap-3 text-sm">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[var(--color-line)] text-xs font-medium text-[var(--color-blue)]">
+                        {i + 1}
+                      </span>
+                      <span className="text-[var(--color-mist)]">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.02] p-6">
+                <h2 className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight">
                   Prefer email?
                 </h2>
                 <p className="mt-2 text-sm text-[var(--color-mist)]">
