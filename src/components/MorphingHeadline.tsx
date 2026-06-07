@@ -6,7 +6,6 @@ const STATIC_START = "Websites that make ";
 const STATIC_END = " look trusted before the customer ever calls.";
 
 const industries = [
-  "small businesses",
   "cafes",
   "gyms",
   "trades",
