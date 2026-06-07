@@ -13,10 +13,8 @@ export const siteConfig = {
   /**
    * Canonical site URL — must match where the site is actually served, since it
    * drives canonical tags, OG image URLs, the sitemap and robots.
-   * TODO: switch to "https://lunamardigital.co.uk" once that custom domain is
-   * connected to this Vercel project.
    */
-  url: "https://lunamar-digital.vercel.app",
+  url: "https://lunamardigital.com",
 
   /** Contact email. Confirm the final domain-based address before launch. */
   email: "Lunamardigital1@outlook.com",

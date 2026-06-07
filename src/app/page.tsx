@@ -15,11 +15,11 @@ export default function HomePage() {
     <>
       <HeroSection />
       <MarqueeStrip />
+      <FreePreviewSection />
       <BusinessFitSection />
       <WebsiteProblemsSection />
       <PricingSection />
       <CaseStudyPreview />
-      <FreePreviewSection />
       <TeamSection />
       <ProcessTimeline />
       <FAQSection />
