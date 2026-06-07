@@ -3,6 +3,18 @@
 import { useEffect, useRef } from "react";
 import { siteConfig } from "@/data/siteConfig";
 
+const businessTypeOptions = [
+  "Café or restaurant",
+  "Gym or fitness brand",
+  "Trades or home improvement",
+  "Salon or beauty business",
+  "Clinic or professional services",
+  "Cleaning company",
+  "Driving instructor",
+  "Local shop",
+  "Other service business",
+];
+
 const serviceOptions = [
   "Not sure yet",
   "Core Website (£149/mo)",
@@ -106,6 +118,28 @@ export default function ContactForm() {
             autoComplete="tel"
           />
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="business_type" className={labelClass}>
+          Business type
+        </label>
+        <select
+          id="business_type"
+          name="business_type"
+          required
+          defaultValue=""
+          className={fieldClass}
+        >
+          <option value="" disabled className="bg-[var(--color-ink)]">
+            Select your business type
+          </option>
+          {businessTypeOptions.map((opt) => (
+            <option key={opt} value={opt} className="bg-[var(--color-ink)]">
+              {opt}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div>

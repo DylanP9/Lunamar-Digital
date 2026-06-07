@@ -238,3 +238,58 @@ export const terms = [
  */
 export const foundingRateNote =
   "A limited founding-client rate may be available by invitation for our first few clients. It isn't a public package — ask us if you'd like to be considered.";
+
+export interface OptionalExtra {
+  category: string;
+  items: { label: string; price: string }[];
+}
+
+/** Optional add-ons, always scoped and quoted separately before work begins. */
+export const optionalExtras: OptionalExtra[] = [
+  {
+    category: "Website",
+    items: [
+      { label: "Extra website page", price: "From £200" },
+      { label: "SEO location page", price: "£250–£400" },
+      { label: "Blog or news article", price: "£100–£200" },
+    ],
+  },
+  {
+    category: "Bookings & payments",
+    items: [
+      { label: "Booking system setup", price: "£150–£400" },
+      { label: "Booking system monthly support", price: "From £49/mo" },
+      { label: "Simple e-commerce or payment setup", price: "From £150" },
+      { label: "Small shop or full payment system", price: "£600+" },
+    ],
+  },
+  {
+    category: "Google & local",
+    items: [
+      { label: "Google Business Profile setup", price: "From £149" },
+      { label: "Ongoing GBP management", price: "+£49/mo" },
+    ],
+  },
+  {
+    category: "Domains & email",
+    items: [
+      { label: "Custom email setup", price: "£100–£250" },
+      { label: "Domain and DNS setup", price: "£75–£150" },
+    ],
+  },
+  {
+    category: "Branding & social",
+    items: [
+      { label: "Business card design", price: "From £99" },
+      { label: "Social media refresh", price: "From £299" },
+      { label: "Full social media rebrand", price: "From £599" },
+    ],
+  },
+  {
+    category: "Paid advertising",
+    items: [
+      { label: "Paid ads setup", price: "From £250" },
+      { label: "Paid ads management", price: "From £150/mo + ad spend" },
+    ],
+  },
+];

@@ -8,14 +8,14 @@ export const mainNav: NavLink[] = [
   { label: "Services", href: "/services" },
   { label: "Pricing", href: "/pricing" },
   { label: "Work", href: "/work" },
-  { label: "Contact", href: "/contact" },
+  { label: "Free Preview", href: "/contact" },
 ];
 
 export const footerNav: NavLink[] = [
   { label: "Services", href: "/services" },
   { label: "Pricing", href: "/pricing" },
   { label: "Work", href: "/work" },
-  { label: "Contact", href: "/contact" },
+  { label: "Free Preview", href: "/contact" },
   { label: "Privacy", href: "/privacy" },
 ];
 

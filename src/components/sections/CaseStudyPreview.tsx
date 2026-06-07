@@ -37,16 +37,8 @@ export default function CaseStudyPreview() {
               {study.overview}
             </p>
 
-            <div className="mt-7 rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.025] p-5">
-              <blockquote className="mb-5 border-b border-[var(--color-line)] pb-5">
-                <p className="font-[family-name:var(--font-display)] text-xl font-semibold leading-snug tracking-tight text-white">
-                  “They understood the brand and brought the website to life.”
-                </p>
-                <footer className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-mistier)]">
-                  Gym Vibe Café
-                </footer>
-              </blockquote>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-blue)]">
+            <div className=”mt-7 rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.025] p-5”>
+              <p className=”text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-blue)]”>
                 What changed
               </p>
               <ul className="mt-4 space-y-3">

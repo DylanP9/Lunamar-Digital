@@ -1,17 +1,3 @@
-/**
- * Shared marketing content blocks (value strip, process, outcomes, deep dives).
- * Centralised here so copy lives in one place rather than across components.
- */
-
-/** Trust / value strip on the homepage. */
-export const valuePoints: string[] = [
-  "No upfront website cost",
-  "Monthly growth plans",
-  "Websites, SEO and marketing",
-  "Built, hosted and maintained",
-  "Designed to convert",
-];
-
 export interface ProcessStep {
   number: string;
   title: string;
@@ -46,48 +32,3 @@ export const processSteps: ProcessStep[] = [
   },
 ];
 
-export interface DeepDive {
-  title: string;
-  description: string;
-}
-
-/** Services deep-dive subsections. */
-export const deepDives: DeepDive[] = [
-  {
-    title: "Websites that convert",
-    description:
-      "Fast, mobile-first websites with clear journeys that turn visitors into calls, bookings and sales.",
-  },
-  {
-    title: "SEO that gets you found",
-    description:
-      "Technical, on-page and local SEO foundations so the customers already searching can find you.",
-  },
-  {
-    title: "Social content that builds trust",
-    description:
-      "Consistent, professional posts and reels that keep you visible and credible between visits.",
-  },
-  {
-    title: "Clear details that save time",
-    description:
-      "Menus, services, offers and contact routes arranged so customers do not need to chase basic information.",
-  },
-  {
-    title: "Ongoing support that keeps everything fresh",
-    description:
-      "Hosting, updates and optimisation included, so your digital presence never goes stale.",
-  },
-];
-
-/** Outcome-driven cards (no fabricated statistics). */
-export const outcomes: string[] = [
-  "More enquiries",
-  "More calls",
-  "More bookings",
-  "More visits",
-  "Better first impression",
-  "Stronger search visibility",
-  "Easier updates",
-  "Better mobile experience",
-];

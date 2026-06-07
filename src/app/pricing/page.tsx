@@ -5,7 +5,7 @@ import ComparisonTable from "@/components/ComparisonTable";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
 import ContactCTA from "@/components/sections/ContactCTA";
-import { included, notIncluded, terms, foundingRateNote } from "@/data/pricing";
+import { included, notIncluded, terms, foundingRateNote, optionalExtras } from "@/data/pricing";
 import { faqs } from "@/data/faqs";
 
 export const metadata: Metadata = {
@@ -102,6 +102,40 @@ export default function PricingPage() {
                 ))}
               </ul>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="container-x">
+          <SectionHeader
+            eyebrow="Add-ons"
+            title="Optional extras"
+            description="Everything below is scoped and quoted separately before any work begins. Nothing is added to your plan without your approval."
+          />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {optionalExtras.map((group, i) => (
+              <Reveal key={group.category} delay={i * 40}>
+                <div className="h-full rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.02] p-6">
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-blue)]">
+                    {group.category}
+                  </p>
+                  <ul className="mt-4 space-y-3">
+                    {group.items.map((item) => (
+                      <li key={item.label} className="flex items-start justify-between gap-4 text-sm">
+                        <span className="text-[var(--color-mist)]">{item.label}</span>
+                        <span className="shrink-0 tabular-nums text-white/80">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal>
+            <p className="mt-6 text-center text-xs text-[var(--color-mistier)]">
+              All add-on prices are indicative. Final scope and cost are confirmed in writing before work starts.
+            </p>
           </Reveal>
         </div>
       </section>
