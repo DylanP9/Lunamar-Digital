@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
-import Image from "next/image";
 import ScrambleText from "@/components/ScrambleText";
+import FloatingDeviceStack from "@/components/FloatingDeviceStack";
 import { primaryCta } from "@/data/navigation";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -38,8 +38,8 @@ export default function HeroSection() {
             <h1 className="max-w-4xl font-[family-name:var(--font-display)] text-[clamp(2.7rem,6vw,5.35rem)] font-semibold leading-[0.98] tracking-[-0.035em] text-balance">
               <ScrambleText
                 text="Websites that make small businesses look trusted before the customer ever calls."
-                duration={1600}
-                delay={250}
+                duration={2800}
+                delay={400}
               />
             </h1>
 
@@ -76,31 +76,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div
-            data-reveal
-            className="is-visible relative rounded-[1.25rem] border border-[var(--color-line-strong)] bg-white/[0.04] p-3 shadow-[0_30px_90px_-55px_rgba(127,163,255,0.75)]"
-          >
-            <div className="overflow-hidden rounded-[1rem] border border-white/[0.08] bg-black">
-              <Image
-                src="/images/case-studies/gym-vibe-cafe/homepage.png"
-                alt="Gym Vibe Café website preview designed by Lunamar Digital"
-                width={1440}
-                height={1100}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                quality={82}
-                priority
-                className="aspect-[16/12] w-full object-cover object-top"
-              />
-            </div>
-            <div className="absolute -bottom-5 left-6 right-6 rounded-xl border border-[var(--color-line)] bg-[var(--color-ink)]/92 px-5 py-4 shadow-2xl backdrop-blur">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-blue)]">
-                Live client preview
-              </p>
-              <p className="mt-1 text-sm text-[var(--color-mist)]">
-                A real project screen beats another generic agency promise.
-              </p>
-            </div>
-          </div>
+          <FloatingDeviceStack />
         </div>
       </div>
     </section>
