@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import HighlightText from "@/components/HighlightText";
 
 const problems = [
   {
@@ -33,11 +34,11 @@ export default function WebsiteProblemsSection() {
               The website should make trust easier, not make customers work for
               it.
             </h2>
-            <p className="mt-5 text-base leading-8 text-[var(--color-mist)]">
-              Most small businesses do not need a complicated digital overhaul.
-              They need a clear place for customers to understand the offer,
-              check the details and take the next step.
-            </p>
+            <HighlightText
+              text="Most small businesses do not need a complicated digital overhaul. They need a clear place for customers to understand the offer, check the details and take the next step."
+              className="mt-5 text-base leading-8"
+              fillAt={0.68}
+            />
           </Reveal>
 
           <div className="space-y-4">

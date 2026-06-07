@@ -186,6 +186,15 @@ body::after {
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .animate-spin-slow {
   animation: spin-slow 48s linear infinite;
 }
@@ -197,6 +206,12 @@ body::after {
 }
 .animate-pulse-glow {
   animation: pulse-glow 5s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Scroll reveal — opt-in via data attribute, toggled by IntersectionObserver. */

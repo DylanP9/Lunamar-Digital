@@ -21,14 +21,14 @@ export default function CaseStudyPreview() {
         <SectionHeader
           eyebrow="Selected work"
           title={study.tagline}
-          description="A real project preview for a Glasgow café and meal-prep business, shown with prototype status clearly explained."
+          description="A real project preview for a Glasgow cafe and meal-prep business, shown with prototype status clearly explained."
         />
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <Reveal className="order-2 lg:order-1">
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-[var(--color-blue)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-blue)] animate-pulse-glow" />
-              {study.status} · {study.sector}
+              {study.status} &middot; {study.sector}
             </span>
             <h3 className="mt-5 font-[family-name:var(--font-display)] text-2xl font-semibold tracking-tight">
               {study.name}
@@ -37,8 +37,8 @@ export default function CaseStudyPreview() {
               {study.overview}
             </p>
 
-            <div className=”mt-7 rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.025] p-5”>
-              <p className=”text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-blue)]”>
+            <div className="mt-7 rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.025] p-5">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-blue)]">
                 What changed
               </p>
               <ul className="mt-4 space-y-3">
@@ -67,7 +67,7 @@ export default function CaseStudyPreview() {
                 Read the case study
               </Button>
               <Button href="/work" variant="ghost">
-                All work →
+                All work &rarr;
               </Button>
             </div>
           </Reveal>

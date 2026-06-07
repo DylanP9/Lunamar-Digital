@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Image from "next/image";
+import ScrambleText from "@/components/ScrambleText";
 import { primaryCta } from "@/data/navigation";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -35,8 +36,11 @@ export default function HeroSection() {
             </div>
 
             <h1 className="max-w-4xl font-[family-name:var(--font-display)] text-[clamp(2.7rem,6vw,5.35rem)] font-semibold leading-[0.98] tracking-[-0.035em] text-balance">
-              Websites that make small businesses look trusted before the
-              customer ever calls.
+              <ScrambleText
+                text="Websites that make small businesses look trusted before the customer ever calls."
+                duration={1600}
+                delay={250}
+              />
             </h1>
 
             <p className="mt-7 max-w-2xl text-base leading-8 text-[var(--color-mist)] sm:text-lg">

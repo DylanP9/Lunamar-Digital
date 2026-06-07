@@ -1,4 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
+import MarqueeStrip from "@/components/MarqueeStrip";
 import BusinessFitSection from "@/components/sections/BusinessFitSection";
 import WebsiteProblemsSection from "@/components/sections/WebsiteProblemsSection";
 import PricingSection from "@/components/sections/PricingSection";
@@ -13,6 +14,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <MarqueeStrip />
       <BusinessFitSection />
       <WebsiteProblemsSection />
       <PricingSection />
