@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
-const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+import { useEffect, useState } from "react";
 
 const STATIC_START = "Websites that make ";
 const STATIC_END = " look trusted before the customer ever calls.";
@@ -19,106 +17,48 @@ const industries = [
   "driving instructors",
 ];
 
-const HOLD_DURATION = 2600;
-const MORPH_DURATION = 750;
-
-type Phase = "idle" | "morphing";
-
-function scrambleIn(text: string, progress: number): string {
-  const lockedCount = Math.floor(Math.pow(progress, 0.6) * text.length);
-  return text
-    .split("")
-    .map((char, i) => {
-      if (char === " ") return " ";
-      if (i < lockedCount) return char;
-      return CHARS[Math.floor(Math.random() * CHARS.length)];
-    })
-    .join("");
-}
+const HOLD_MS = 1800;
+const FADE_MS = 300;
 
 interface MorphingHeadlineProps {
   className?: string;
 }
 
 export default function MorphingHeadline({ className }: MorphingHeadlineProps) {
-  const [phase, setPhase] = useState<Phase>("idle");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [morphWord, setMorphWord] = useState(industries[0]);
-
-  const frameRef = useRef<number | null>(null);
-  const startRef = useRef<number | null>(null);
-  const reducedMotion = useRef(false);
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    reducedMotion.current = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const cycle = setInterval(() => {
+      // Fade out
+      setVisible(false);
+      setTimeout(() => {
+        setIndex((i) => (i + 1) % industries.length);
+        setVisible(true);
+      }, FADE_MS);
+    }, HOLD_MS + FADE_MS);
+
+    return () => clearInterval(cycle);
   }, []);
 
-  // ── Phase 2: hold then trigger morph ─────────────────────────────────────
-  useEffect(() => {
-    if (phase !== "idle" || reducedMotion.current) return;
-    const hold = setTimeout(() => setPhase("morphing"), HOLD_DURATION);
-    return () => clearTimeout(hold);
-  }, [phase, currentIndex]);
-
-  // ── Phase 3: morph the industry word ─────────────────────────────────────
-  useEffect(() => {
-    if (phase !== "morphing") return;
-
-    const nextIndex = (currentIndex + 1) % industries.length;
-    const currentWord = industries[currentIndex];
-    const nextWord = industries[nextIndex];
-    startRef.current = null;
-
-    const animate = (timestamp: number) => {
-      if (!startRef.current) startRef.current = timestamp;
-      const progress = (timestamp - startRef.current) / MORPH_DURATION;
-
-      if (progress >= 1) {
-        setMorphWord(nextWord);
-        setCurrentIndex(nextIndex);
-        setPhase("idle");
-        return;
-      }
-
-      let displayed: string;
-
-      if (progress < 0.45) {
-        // Scramble OUT the current word (right to left erasure)
-        const p = progress / 0.45;
-        const keepCount = Math.floor((1 - p) * currentWord.length);
-        displayed = currentWord
-          .split("")
-          .map((char, i) => {
-            if (char === " ") return " ";
-            if (i < keepCount) return char;
-            return CHARS[Math.floor(Math.random() * CHARS.length)];
-          })
-          .join("");
-      } else {
-        // Scramble IN the next word (left to right reveal)
-        const p = (progress - 0.45) / 0.55;
-        displayed = scrambleIn(nextWord, p);
-      }
-
-      setMorphWord(displayed);
-      frameRef.current = requestAnimationFrame(animate);
-    };
-
-    frameRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (frameRef.current) cancelAnimationFrame(frameRef.current);
-    };
-  }, [phase, currentIndex]);
-
-  const ariaLabel =
-    STATIC_START + industries[currentIndex] + STATIC_END;
-
   return (
-    <h1 className={className} aria-label={ariaLabel}>
+    <h1
+      className={className}
+      aria-label={STATIC_START + industries[index] + STATIC_END}
+    >
       {STATIC_START}
-      <span className="text-[var(--color-blue)]">{morphWord}</span>
+      <span
+        className="text-[var(--color-blue)]"
+        style={{
+          opacity: visible ? 1 : 0,
+          transition: `opacity ${FADE_MS}ms ease-in-out`,
+          display: "inline-block",
+        }}
+      >
+        {industries[index]}
+      </span>
       {STATIC_END}
     </h1>
   );
