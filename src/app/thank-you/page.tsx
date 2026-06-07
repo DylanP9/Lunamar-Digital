@@ -33,9 +33,9 @@ export default function ThankYouPage() {
         </h1>
         <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-[var(--color-mist)]">
           We&apos;ve received your enquiry and will get back to you, usually
-          within one business day. For selected businesses we&apos;ll put
-          together a free preview concept so you can see the direction before you
-          commit.
+          within one business day. For selected businesses, we&apos;ll put
+          together a focused homepage concept so you can see the direction
+          before committing to a monthly plan.
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button href="/">Back to home</Button>

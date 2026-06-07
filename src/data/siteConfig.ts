@@ -1,16 +1,14 @@
 /**
  * Central site configuration.
  *
- * TODO (business): replace the placeholder contact details and domain below
- * with the confirmed values before launch. These are intentionally the only
- * place these values live — do not hard-code them elsewhere.
+ * Central place for core brand, URL and contact settings.
  */
 export const siteConfig = {
   name: "Lunamar Digital",
   shortName: "Lunamar",
   tagline: "Websites. Marketing. Growth.",
   description:
-    "Lunamar Digital creates premium websites, SEO systems and digital marketing strategies that help businesses grow online.",
+    "Lunamar Digital builds and maintains websites, SEO foundations and social content for serious small businesses that want to look trusted online.",
 
   /**
    * Canonical site URL — must match where the site is actually served, since it
@@ -25,13 +23,20 @@ export const siteConfig = {
   domain: "lunamardigital.co.uk",
 
   /** Headline sales hook reused across the site. */
-  hook: "No-upfront websites and digital growth plans from £149/month.",
+  hook: "No-upfront websites and monthly support plans from £149/month.",
 
-  /** Social profile placeholders. Replace href values when handles are live. */
+  /** Live social profiles. Keep this list to confirmed public URLs only. */
   socials: [
-    { label: "Instagram", href: "#", handle: "@lunamardigital" },
-    { label: "Facebook", href: "#", handle: "Lunamar Digital" },
-    { label: "LinkedIn", href: "#", handle: "Lunamar Digital" },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/lunamardigital/",
+      handle: "@lunamardigital",
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/dylan-polland/",
+      handle: "Dylan Polland",
+    },
   ],
 
   /** OpenGraph image lives in /public; replace with branded artwork later. */

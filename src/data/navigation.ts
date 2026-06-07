@@ -21,7 +21,7 @@ export const footerNav: NavLink[] = [
 
 /** Shared call-to-action used across the site. */
 export const primaryCta = {
-  label: "Request a free preview",
+  label: "Apply for a free website preview",
   href: "/contact",
 } as const;
 

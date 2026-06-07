@@ -56,7 +56,7 @@ export default function Header() {
         <div className="hidden md:block">
           <Link
             href={primaryCta.href}
-            className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--color-blue-deep),var(--color-purple-deep))] px-5 py-2.5 text-sm font-medium text-white shadow-[0_10px_40px_-12px_rgba(91,140,255,0.7)] transition-transform duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--color-blue-deep)] px-5 py-2.5 text-sm font-medium text-white shadow-[0_10px_40px_-12px_rgba(91,140,255,0.7)] transition-transform duration-300 hover:-translate-y-0.5"
           >
             {primaryCta.label}
           </Link>

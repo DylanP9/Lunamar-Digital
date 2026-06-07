@@ -11,12 +11,22 @@ import type { PricingPlan } from "@/types/pricing";
 export const pricingPlans: PricingPlan[] = [
   {
     id: "core",
-    name: "Core Website",
+    name: "Foundation",
     price: "£149",
     cadence: "/month",
     badge: "Foundation",
     bestFor:
-      "Businesses that need a clean, mobile-friendly website and a solid online presence.",
+      "Best for businesses that need a clear, mobile-friendly website without a large upfront cost.",
+    outcome:
+      "Build a professional online presence that makes your business easier to trust and contact.",
+    helpsWith: [
+      "Make a stronger first impression",
+      "Turn visitors into calls and enquiries",
+      "Keep key business information accurate",
+      "Look professional on every device",
+    ],
+    includedSummary:
+      "Includes a 1–3 page website, basic SEO, hosting support, performance setup and fair-use updates.",
     features: [
       "1–3 page website",
       "Mobile-friendly design",
@@ -37,7 +47,17 @@ export const pricingPlans: PricingPlan[] = [
     cadence: "/month",
     badge: "Web-Only",
     bestFor:
-      "Businesses that want a larger, premium website and advanced SEO — without social media. Pay only for the high-intent Google traffic you actually want.",
+      "Best for businesses that want a premium website and better Google visibility without social media management.",
+    outcome:
+      "Create a stronger website that helps customers find you, understand your offer and take action.",
+    helpsWith: [
+      "Improve search visibility",
+      "Present services more clearly",
+      "Build trust with a deeper website",
+      "Generate more qualified enquiries",
+    ],
+    includedSummary:
+      "Includes up to 10 pages, keyword mapping, schema, Google Business Profile optimisation, speed improvements and ongoing maintenance.",
     features: [
       "Up to 10 pages",
       "Custom layouts (FAQs, Team, Portfolio)",
@@ -56,7 +76,17 @@ export const pricingPlans: PricingPlan[] = [
     cadence: "/month",
     badge: "Most Popular",
     bestFor:
-      "Businesses that want a proper website and a consistent social presence.",
+      "Best for businesses that want a proper website and consistent social content.",
+    outcome:
+      "Keep your website and social presence working together to build visibility and trust.",
+    helpsWith: [
+      "Stay active and professional online",
+      "Promote offers, services and updates",
+      "Build trust before customers contact you",
+      "Create a more consistent digital presence",
+    ],
+    includedSummary:
+      "Includes Advanced Web & SEO plus up to 4 social posts per month, captions, scheduling and a monthly performance summary.",
     features: [
       "Everything in Advanced Web & SEO, plus:",
       "Up to 4 social posts per month",
@@ -71,12 +101,22 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     id: "partner",
-    name: "Partner",
+    name: "Growth Partner",
     price: "From £799",
     cadence: "/month",
     badge: "Growth Partner",
     bestFor:
-      "Businesses that want website, SEO, social media and ongoing growth support.",
+      "Best for businesses that want ongoing website, SEO, social media and campaign support.",
+    outcome:
+      "Build a complete digital growth system around your business.",
+    helpsWith: [
+      "Strengthen search visibility",
+      "Improve customer journeys and conversions",
+      "Run more focused campaigns",
+      "Make better decisions through reporting",
+    ],
+    includedSummary:
+      "Includes everything in Grow plus 8+ posts per month, reels from supplied clips, campaign planning, conversion improvements, reporting and priority support.",
     features: [
       "Everything in Grow, plus:",
       "8+ social posts per month",

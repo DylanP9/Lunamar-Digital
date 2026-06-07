@@ -3,12 +3,11 @@ import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import { siteConfig } from "@/data/siteConfig";
-import { valuePoints } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Contact — Request a Free Website Preview",
+  title: "Apply for a Free Website Preview",
   description:
-    "Request a free website preview from Lunamar Digital. Tell us about your business and we'll show you what your website could look like before you commit.",
+    "Apply for a free website preview from Lunamar Digital. Selected businesses receive a focused homepage concept before committing to a monthly plan.",
   alternates: { canonical: "/contact" },
 };
 
@@ -17,14 +16,14 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Free preview"
-        title="Request a free preview."
-        description="Tell us about your business. For selected businesses we create a preview concept first, so you can see what your website could look like before moving forward."
+        title="Apply for a free website preview."
+        description="Tell us what is not working online right now. For selected businesses, we create a focused homepage concept within 5–7 working days after reviewing your current website, social media, branding and business information."
       />
 
       <section className="section pt-4">
         <div className="container-x grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-start">
           <Reveal>
-            <div className="rounded-[2rem] border border-[var(--color-line)] bg-white/[0.02] p-6 sm:p-9">
+            <div className="rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.025] p-6 sm:p-9">
               <ContactForm />
             </div>
           </Reveal>
@@ -38,8 +37,8 @@ export default function ContactPage() {
                 <ol className="mt-4 space-y-3">
                   {[
                     "We read your enquiry and reply, usually within one business day.",
-                    "For selected businesses, we put together a free preview concept.",
-                    "If it's a fit, we confirm a plan and get started — no upfront website cost.",
+                    "If your business is a fit, we put together a focused preview concept.",
+                    "If the direction makes sense, we confirm the plan, scope and monthly terms before work starts. There is no obligation to proceed.",
                   ].map((step, i) => (
                     <li key={step} className="flex items-start gap-3 text-sm">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[var(--color-line)] text-xs font-medium text-[var(--color-blue)]">
@@ -71,7 +70,12 @@ export default function ContactPage() {
                   Why Lunamar
                 </h2>
                 <ul className="mt-4 space-y-3">
-                  {valuePoints.map((point) => (
+                  {[
+                    "No upfront website cost",
+                    "Clear monthly plans",
+                    "Transparent exclusions",
+                    "Founder-led support",
+                  ].map((point) => (
                     <li
                       key={point}
                       className="flex items-center gap-2.5 text-sm text-white/85"

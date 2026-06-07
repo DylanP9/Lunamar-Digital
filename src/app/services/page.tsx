@@ -10,7 +10,7 @@ import { primaryCta } from "@/data/navigation";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Website design, SEO, local SEO, social media management, digital marketing, conversion optimisation and maintenance — delivered through simple monthly plans.",
+    "Website design, SEO foundations, social content and maintenance for cafés, gyms, trades, salons, restaurants and service businesses.",
   alternates: { canonical: "/services" },
 };
 
@@ -21,8 +21,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Websites, visibility and marketing — joined up."
-        description="Everything you need to launch sharper and grow smarter, delivered as one connected system rather than disconnected one-off projects."
+        title="The practical digital work small businesses actually need."
+        description="A better website, stronger search foundations, clearer social content and ongoing support, without turning your business into a bloated marketing project."
       >
         <Button href={primaryCta.href}>{primaryCta.label}</Button>
       </PageHero>
@@ -33,7 +33,7 @@ export default function ServicesPage() {
             <Reveal key={service.id} delay={i * 40}>
               <article
                 id={service.id}
-                className="glow-border relative grid gap-6 rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.02] p-7 sm:p-9 md:grid-cols-[auto_1fr] md:gap-10"
+                className="relative grid gap-6 rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.025] p-7 sm:p-9 md:grid-cols-[auto_1fr] md:gap-10"
               >
                 <div className="flex md:flex-col md:items-start">
                   <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--color-line)] bg-white/[0.03] text-[var(--color-blue)]">
@@ -44,7 +44,7 @@ export default function ServicesPage() {
                   <h2 className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-tight">
                     {service.title}
                     {service.id === "ecommerce-payments" ? (
-                      <span className="ml-3 align-middle text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-purple)]">
+                      <span className="ml-3 align-middle text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-blue)]">
                         Optional add-on
                       </span>
                     ) : null}
@@ -83,7 +83,7 @@ export default function ServicesPage() {
 
       <ContactCTA
         title="Let's map the right mix for your business."
-        description="Request a free preview and we'll show you what your website and marketing could look like."
+        description="Apply for a free website preview and we'll show you what your website and marketing could look like."
       />
     </>
   );

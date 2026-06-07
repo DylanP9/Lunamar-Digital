@@ -69,9 +69,9 @@ export const deepDives: DeepDive[] = [
       "Consistent, professional posts and reels that keep you visible and credible between visits.",
   },
   {
-    title: "Digital systems that save time",
+    title: "Clear details that save time",
     description:
-      "Joined-up content, offers and conversion systems that work together instead of in silos.",
+      "Menus, services, offers and contact routes arranged so customers do not need to chase basic information.",
   },
   {
     title: "Ongoing support that keeps everything fresh",

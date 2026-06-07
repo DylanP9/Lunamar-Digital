@@ -11,7 +11,7 @@ import { faqs } from "@/data/faqs";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Transparent monthly website and digital growth plans from £149/month. No upfront website cost — compare the Core, Grow and Partner plans from Lunamar Digital.",
+    "Transparent no-upfront website plans from £149/month. Compare Core, Advanced Web & SEO, Grow and Partner from Lunamar Digital.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -20,8 +20,8 @@ export default function PricingPage() {
     <>
       <PageHero
         eyebrow="Pricing"
-        title="Monthly plans, no upfront website cost."
-        description="Instead of paying thousands upfront for a website, launch with a professional website and ongoing support through a simple monthly plan — from £149/month. Four clear tiers, no hidden build fees."
+        title="Clear monthly plans. No upfront website cost."
+        description="Choose the level of support you need now. Every plan is built around a real business outcome: a better first impression, clearer visibility and easier customer action."
       />
 
       <section className="section pt-0">
@@ -40,7 +40,7 @@ export default function PricingPage() {
           <SectionHeader
             eyebrow="Compare"
             title="Every plan, side by side"
-            description="Compare what's included across Core, Grow and Partner."
+            description="Compare what's included across Core, Advanced Web & SEO, Grow and Partner before you enquire."
           />
           <Reveal className="mt-12">
             <ComparisonTable />
@@ -119,7 +119,7 @@ export default function PricingPage() {
                     key={term}
                     className="flex items-start gap-2.5 text-sm text-[var(--color-mist)]"
                   >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-purple)]" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-blue)]" />
                     {term}
                   </li>
                 ))}
@@ -161,7 +161,7 @@ export default function PricingPage() {
 
       <ContactCTA
         title="Not sure which plan fits?"
-        description="Request a free preview and we'll recommend the right plan for where your business is now."
+        description="Apply for a free website preview and we'll recommend the right plan for where your business is now."
       />
     </>
   );

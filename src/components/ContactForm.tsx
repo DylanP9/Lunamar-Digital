@@ -158,9 +158,9 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-full bg-[linear-gradient(120deg,var(--color-blue-deep),var(--color-purple-deep))] px-7 py-3.5 text-base font-medium text-white shadow-[0_10px_40px_-12px_rgba(91,140,255,0.7)] transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
+        className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-blue-deep)] px-7 py-3.5 text-base font-medium text-white shadow-[0_10px_40px_-12px_rgba(91,140,255,0.7)] transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
       >
-        Request my free preview
+        Apply for my free website preview
       </button>
 
       <p className="text-sm text-[var(--color-mistier)]">

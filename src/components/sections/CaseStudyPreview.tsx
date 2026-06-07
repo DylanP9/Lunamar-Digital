@@ -9,6 +9,11 @@ export default function CaseStudyPreview() {
   const study = featuredCaseStudies[0];
   if (!study) return null;
   const [featuredMockup, ...supportingMockups] = study.mockups;
+  const changes = [
+    "Instagram interest now has a website destination",
+    "Menu, location and meal-prep details sit in one place",
+    "Ordering foundations are ready to scope honestly",
+  ];
 
   return (
     <section className="section" id="work">
@@ -16,10 +21,10 @@ export default function CaseStudyPreview() {
         <SectionHeader
           eyebrow="Selected work"
           title={study.tagline}
-          description={study.summary}
+          description="A real project preview for a Glasgow café and meal-prep business, shown with prototype status clearly explained."
         />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[0.85fr_1.35fr] lg:items-center">
+        <div className="mt-14 grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <Reveal className="order-2 lg:order-1">
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-[var(--color-blue)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-blue)] animate-pulse-glow" />
@@ -31,13 +36,36 @@ export default function CaseStudyPreview() {
             <p className="mt-3 text-sm leading-relaxed text-[var(--color-mist)]">
               {study.overview}
             </p>
+
+            <div className="mt-7 rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.025] p-5">
+              <blockquote className="mb-5 border-b border-[var(--color-line)] pb-5">
+                <p className="font-[family-name:var(--font-display)] text-xl font-semibold leading-snug tracking-tight text-white">
+                  “They understood the brand and brought the website to life.”
+                </p>
+                <footer className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-mistier)]">
+                  Gym Vibe Café
+                </footer>
+              </blockquote>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-blue)]">
+                What changed
+              </p>
+              <ul className="mt-4 space-y-3">
+                {changes.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-white/86">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-blue)]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
               {study.stack.map((item) => (
                 <li
                   key={item}
                   className="flex items-center gap-2.5 text-sm text-white/85"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-purple)]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-blue)]" />
                   {item}
                 </li>
               ))}

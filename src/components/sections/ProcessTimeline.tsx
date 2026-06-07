@@ -16,7 +16,7 @@ export default function ProcessTimeline() {
           {/* Vertical glowing line (hidden on small screens) */}
           <div
             aria-hidden="true"
-            className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,rgba(91,140,255,0.5),rgba(164,114,255,0.5),transparent)] lg:block"
+            className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,rgba(127,163,255,0.55),rgba(127,163,255,0.18),transparent)] lg:block"
           />
 
           <ol className="space-y-5 lg:space-y-0">

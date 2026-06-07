@@ -10,8 +10,8 @@ export default function ServicesSection() {
       <div className="container-x">
         <SectionHeader
           eyebrow="What we do"
-          title="Everything your digital presence needs"
-          description="Six core capabilities that work together — from the first impression to the customer that comes back."
+          title="Practical support for the parts customers actually check"
+          description="Websites, search foundations, social content and maintenance shaped around how people decide whether to trust a local business."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

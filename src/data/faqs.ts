@@ -7,7 +7,7 @@ export const faqs: Faq[] = [
   {
     question: "What does Lunamar Digital do?",
     answer:
-      "We help businesses build better websites, stronger visibility and smarter marketing systems. That spans website design and build, SEO, social media, digital marketing, conversion optimisation and ongoing maintenance — delivered through simple monthly plans.",
+      "We help small businesses improve the way they look and get found online. That spans website design and build, SEO foundations, social content, conversion improvements and ongoing maintenance — delivered through simple monthly plans.",
   },
   {
     question: "How does the no-upfront website model work?",
@@ -62,6 +62,6 @@ export const faqs: Faq[] = [
   {
     question: "How do we get started?",
     answer:
-      "Request a free preview. For selected businesses we create a preview concept first, so you can see what your website could look like before you commit.",
+      "Apply for a free website preview. For selected businesses we create a focused homepage concept first, so you can see the direction before committing to a monthly plan.",
   },
 ];
