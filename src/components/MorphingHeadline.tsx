@@ -19,14 +19,12 @@ const industries = [
   "driving instructors",
 ];
 
-const INITIAL_DELAY = 400;
-const INITIAL_DURATION = 2800;
 const HOLD_DURATION = 2600;
 const MORPH_DURATION = 750;
 
-type Phase = "initial" | "idle" | "morphing";
+type Phase = "idle" | "morphing";
 
-function scramble(text: string, progress: number): string {
+function scrambleIn(text: string, progress: number): string {
   const lockedCount = Math.floor(Math.pow(progress, 0.6) * text.length);
   return text
     .split("")
@@ -43,10 +41,7 @@ interface MorphingHeadlineProps {
 }
 
 export default function MorphingHeadline({ className }: MorphingHeadlineProps) {
-  const fullText = STATIC_START + industries[0] + STATIC_END;
-
-  const [phase, setPhase] = useState<Phase>("initial");
-  const [displayedFull, setDisplayedFull] = useState("");
+  const [phase, setPhase] = useState<Phase>("idle");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [morphWord, setMorphWord] = useState(industries[0]);
 
@@ -54,40 +49,10 @@ export default function MorphingHeadline({ className }: MorphingHeadlineProps) {
   const startRef = useRef<number | null>(null);
   const reducedMotion = useRef(false);
 
-  // ── Phase 1: initial full-text scramble ──────────────────────────────────
   useEffect(() => {
     reducedMotion.current = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-
-    if (reducedMotion.current) {
-      setDisplayedFull(fullText);
-      setPhase("idle");
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      const animate = (timestamp: number) => {
-        if (!startRef.current) startRef.current = timestamp;
-        const progress = (timestamp - startRef.current) / INITIAL_DURATION;
-
-        if (progress >= 1) {
-          setDisplayedFull(fullText);
-          setPhase("idle");
-          return;
-        }
-
-        setDisplayedFull(scramble(fullText, progress));
-        frameRef.current = requestAnimationFrame(animate);
-      };
-      frameRef.current = requestAnimationFrame(animate);
-    }, INITIAL_DELAY);
-
-    return () => {
-      clearTimeout(timeout);
-      if (frameRef.current) cancelAnimationFrame(frameRef.current);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // ── Phase 2: hold then trigger morph ─────────────────────────────────────
@@ -134,7 +99,7 @@ export default function MorphingHeadline({ className }: MorphingHeadlineProps) {
       } else {
         // Scramble IN the next word (left to right reveal)
         const p = (progress - 0.45) / 0.55;
-        displayed = scramble(nextWord, p);
+        displayed = scrambleIn(nextWord, p);
       }
 
       setMorphWord(displayed);
@@ -152,15 +117,9 @@ export default function MorphingHeadline({ className }: MorphingHeadlineProps) {
 
   return (
     <h1 className={className} aria-label={ariaLabel}>
-      {phase === "initial" ? (
-        displayedFull || <span className="opacity-0">{fullText}</span>
-      ) : (
-        <>
-          {STATIC_START}
-          <span className="text-[var(--color-blue)]">{morphWord}</span>
-          {STATIC_END}
-        </>
-      )}
+      {STATIC_START}
+      <span className="text-[var(--color-blue)]">{morphWord}</span>
+      {STATIC_END}
     </h1>
   );
 }
