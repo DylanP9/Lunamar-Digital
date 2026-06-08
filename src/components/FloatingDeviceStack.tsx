@@ -14,7 +14,7 @@ export default function FloatingDeviceStack() {
   }, []);
 
   return (
-    <div className="relative h-[400px] w-full select-none lg:h-[460px]">
+    <div className="relative h-[480px] w-full select-none lg:h-[560px]">
 
       {/* Ambient glow underneath */}
       <div
@@ -40,17 +40,19 @@ export default function FloatingDeviceStack() {
               gymvibecafe.com
             </div>
           </div>
-          <Image
-            src="/images/case-studies/gym-vibe-cafe/homepage.png"
-            alt="Gym Vibe Cafe website on desktop"
-            width={900}
-            height={580}
-            sizes="40vw"
-            quality={85}
-            priority
-            className="w-full object-cover object-top"
-            style={{ maxHeight: "260px" }}
-          />
+          {/* Fixed aspect ratio viewport — shows a natural above-fold browser crop */}
+          <div className="aspect-[16/10] w-full overflow-hidden">
+            <Image
+              src="/images/case-studies/gym-vibe-cafe/homepage.png"
+              alt="Gym Vibe Cafe website on desktop"
+              width={1440}
+              height={900}
+              sizes="40vw"
+              quality={90}
+              priority
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
         </div>
       </div>
 
@@ -68,16 +70,19 @@ export default function FloatingDeviceStack() {
           <div className="flex justify-center bg-[var(--color-ink)] py-2">
             <div className="h-1.5 w-10 rounded-full bg-white/[0.15]" />
           </div>
-          <Image
-            src="/images/case-studies/gym-vibe-cafe/mobile-homepage.png"
-            alt="Gym Vibe Cafe website on mobile"
-            width={320}
-            height={640}
-            sizes="15vw"
-            quality={85}
-            priority
-            className="w-full object-cover object-top"
-          />
+          {/* Phone viewport — natural portrait crop */}
+          <div className="aspect-[390/844] w-full overflow-hidden">
+            <Image
+              src="/images/case-studies/gym-vibe-cafe/mobile-homepage.png"
+              alt="Gym Vibe Cafe website on mobile"
+              width={390}
+              height={844}
+              sizes="15vw"
+              quality={90}
+              priority
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
           {/* Phone home bar */}
           <div className="flex justify-center bg-[var(--color-ink)] py-2">
             <div className="h-1 w-8 rounded-full bg-white/[0.2]" />
