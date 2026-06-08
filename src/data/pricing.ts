@@ -11,12 +11,22 @@ import type { PricingPlan } from "@/types/pricing";
 export const pricingPlans: PricingPlan[] = [
   {
     id: "core",
-    name: "Core Website",
+    name: "Foundation",
     price: "£149",
     cadence: "/month",
     badge: "Foundation",
     bestFor:
-      "Businesses that need a clean, mobile-friendly website and a solid online presence.",
+      "Best for businesses that need a clear, mobile-friendly website without a large upfront cost.",
+    outcome:
+      "Build a professional online presence that makes your business easier to trust and contact.",
+    helpsWith: [
+      "Make a stronger first impression",
+      "Turn visitors into calls and enquiries",
+      "Keep key business information accurate",
+      "Look professional on every device",
+    ],
+    includedSummary:
+      "Includes a 1–3 page website, basic SEO, hosting support, performance setup and fair-use updates.",
     features: [
       "1–3 page website",
       "Mobile-friendly design",
@@ -37,7 +47,17 @@ export const pricingPlans: PricingPlan[] = [
     cadence: "/month",
     badge: "Web-Only",
     bestFor:
-      "Businesses that want a bigger website and serious local SEO, without social media. You focus the budget on Google and skip the channels you don't use.",
+      "Best for businesses that want a premium website and better Google visibility without social media management.",
+    outcome:
+      "Create a stronger website that helps customers find you, understand your offer and take action.",
+    helpsWith: [
+      "Improve search visibility",
+      "Present services more clearly",
+      "Build trust with a deeper website",
+      "Generate more qualified enquiries",
+    ],
+    includedSummary:
+      "Includes up to 10 pages, keyword mapping, schema, Google Business Profile optimisation, speed improvements and ongoing maintenance.",
     features: [
       "Up to 10 pages",
       "Custom layouts (FAQs, Team, Portfolio)",
@@ -45,7 +65,7 @@ export const pricingPlans: PricingPlan[] = [
       "Google Business Profile optimisation",
       "Speed & performance optimisation",
       "Ongoing technical maintenance",
-      "No social media, just Google-focused growth",
+      "No social media — Google-focused growth",
     ],
     term: "12-month minimum term",
   },
@@ -56,7 +76,17 @@ export const pricingPlans: PricingPlan[] = [
     cadence: "/month",
     badge: "Most Popular",
     bestFor:
-      "Businesses that want a proper website and a consistent social presence.",
+      "Best for businesses that want a proper website and consistent social content.",
+    outcome:
+      "Keep your website and social presence working together to build visibility and trust.",
+    helpsWith: [
+      "Stay active and professional online",
+      "Promote offers, services and updates",
+      "Build trust before customers contact you",
+      "Create a more consistent digital presence",
+    ],
+    includedSummary:
+      "Includes Advanced Web & SEO plus up to 4 social posts per month, captions, scheduling and a monthly performance summary.",
     features: [
       "Everything in Advanced Web & SEO, plus:",
       "Up to 4 social posts per month",
@@ -71,12 +101,22 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     id: "partner",
-    name: "Partner",
+    name: "Growth Partner",
     price: "From £799",
     cadence: "/month",
     badge: "Growth Partner",
     bestFor:
-      "Businesses that want website, SEO, social media and ongoing growth support.",
+      "Best for businesses that want ongoing website, SEO, social media and campaign support.",
+    outcome:
+      "Build a complete digital growth system around your business.",
+    helpsWith: [
+      "Strengthen search visibility",
+      "Improve customer journeys and conversions",
+      "Run more focused campaigns",
+      "Make better decisions through reporting",
+    ],
+    includedSummary:
+      "Includes everything in Grow plus 8+ posts per month, reels from supplied clips, campaign planning, conversion improvements, reporting and priority support.",
     features: [
       "Everything in Grow, plus:",
       "8+ social posts per month",
@@ -189,7 +229,7 @@ export const terms = [
   "Small updates cover reasonable content changes (text, images, prices, hours, services, links, small promos) and are limited to around 2 hours per month unless your plan states otherwise.",
   "Paid ads, content shoots, ordering / booking / payment systems and custom features are quoted separately. Ad spend is always paid separately.",
   "Social posts are created from supplied content and approved in batches; if no edits are requested within 72 hours, posts may be scheduled as prepared.",
-  "We don't guarantee specific sales, rankings, enquiries, followers or revenue. We build the things that make those results more likely.",
+  "We don't guarantee specific sales, rankings, enquiries, followers or revenue — we build the systems that make those outcomes more likely.",
 ];
 
 /**
@@ -197,4 +237,59 @@ export const terms = [
  * card grid so £149 remains the public entry point.
  */
 export const foundingRateNote =
-  "A limited founding-client rate may be available by invitation for our first few clients. It isn't a public package, so ask us if you'd like to be considered.";
+  "A limited founding-client rate may be available by invitation for our first few clients. It isn't a public package — ask us if you'd like to be considered.";
+
+export interface OptionalExtra {
+  category: string;
+  items: { label: string; price: string }[];
+}
+
+/** Optional add-ons, always scoped and quoted separately before work begins. */
+export const optionalExtras: OptionalExtra[] = [
+  {
+    category: "Website",
+    items: [
+      { label: "Extra website page", price: "From £200" },
+      { label: "SEO location page", price: "£250–£400" },
+      { label: "Blog or news article", price: "£100–£200" },
+    ],
+  },
+  {
+    category: "Bookings & payments",
+    items: [
+      { label: "Booking system setup", price: "£150–£400" },
+      { label: "Booking system monthly support", price: "From £49/mo" },
+      { label: "Simple e-commerce or payment setup", price: "From £150" },
+      { label: "Small shop or full payment system", price: "£600+" },
+    ],
+  },
+  {
+    category: "Google & local",
+    items: [
+      { label: "Google Business Profile setup", price: "From £149" },
+      { label: "Ongoing GBP management", price: "+£49/mo" },
+    ],
+  },
+  {
+    category: "Domains & email",
+    items: [
+      { label: "Custom email setup", price: "£100–£250" },
+      { label: "Domain and DNS setup", price: "£75–£150" },
+    ],
+  },
+  {
+    category: "Branding & social",
+    items: [
+      { label: "Business card design", price: "From £99" },
+      { label: "Social media refresh", price: "From £299" },
+      { label: "Full social media rebrand", price: "From £599" },
+    ],
+  },
+  {
+    category: "Paid advertising",
+    items: [
+      { label: "Paid ads setup", price: "From £250" },
+      { label: "Paid ads management", price: "From £150/mo + ad spend" },
+    ],
+  },
+];

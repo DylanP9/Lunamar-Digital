@@ -36,7 +36,7 @@ export default function MockupCard({
         <span className="h-2 w-2 rounded-full bg-white/20" />
       </div>
       <div
-        className={`relative overflow-hidden rounded-xl bg-[linear-gradient(135deg,rgba(91,140,255,0.22),rgba(164,114,255,0.16))] ${imageClassByVariant[variant]}`}
+        className={`relative overflow-hidden rounded-xl bg-[linear-gradient(135deg,rgba(127,163,255,0.18),rgba(246,243,236,0.08))] ${imageClassByVariant[variant]}`}
       >
         {mockup.image ? (
           <Image

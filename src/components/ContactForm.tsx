@@ -3,6 +3,18 @@
 import { useEffect, useRef } from "react";
 import { siteConfig } from "@/data/siteConfig";
 
+const businessTypeOptions = [
+  "Café or restaurant",
+  "Gym or fitness brand",
+  "Trades or home improvement",
+  "Salon or beauty business",
+  "Clinic or professional services",
+  "Cleaning company",
+  "Driving instructor",
+  "Local shop",
+  "Other service business",
+];
+
 const serviceOptions = [
   "Not sure yet",
   "Core Website (£149/mo)",
@@ -109,6 +121,28 @@ export default function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="business_type" className={labelClass}>
+          Business type
+        </label>
+        <select
+          id="business_type"
+          name="business_type"
+          required
+          defaultValue=""
+          className={fieldClass}
+        >
+          <option value="" disabled className="bg-[var(--color-ink)]">
+            Select your business type
+          </option>
+          {businessTypeOptions.map((opt) => (
+            <option key={opt} value={opt} className="bg-[var(--color-ink)]">
+              {opt}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="link" className={labelClass}>
           Website or social link <span className="text-[var(--color-mistier)]">(optional)</span>
         </label>
@@ -159,9 +193,9 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-full bg-[linear-gradient(120deg,var(--color-blue-deep),var(--color-purple-deep))] px-7 py-3.5 text-base font-medium text-white shadow-[0_10px_40px_-12px_rgba(91,140,255,0.7)] transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
+        className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-blue-deep)] px-7 py-3.5 text-base font-medium text-white shadow-[0_10px_40px_-12px_rgba(91,140,255,0.7)] transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
       >
-        Request my free preview
+        Apply for my free website preview
       </button>
 
       <p className="text-sm text-[var(--color-mistier)]">

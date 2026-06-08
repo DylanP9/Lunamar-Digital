@@ -8,9 +8,9 @@ export default function PricingSection() {
     <section className="section" id="pricing">
       <div className="container-x">
         <SectionHeader
-          eyebrow="Packages"
-          title="One monthly fee. No upfront build cost."
-          description="Pick the plan that fits where your business is now. Each one rolls the build, hosting, maintenance and support into one monthly price, starting at £149."
+          eyebrow="Pricing"
+          title="Monthly plans without the upfront website bill."
+          description="Start with the level of support your business actually needs: a clean website, stronger SEO, consistent social content or a closer growth partnership."
         />
         <div className="mt-14">
           <PricingGrid />

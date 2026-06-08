@@ -1,23 +1,40 @@
-import ScrollHero from "@/components/sections/ScrollHero";
-import PainPointsSection from "@/components/sections/PainPointsSection";
-import ScrollStory from "@/components/sections/ScrollStory";
-import HomeCaseStudy from "@/components/sections/HomeCaseStudy";
+import HeroSection from "@/components/sections/HeroSection";
+import MarqueeStrip from "@/components/MarqueeStrip";
+import FloatingDeviceStack from "@/components/FloatingDeviceStack";
+import BusinessFitSection from "@/components/sections/BusinessFitSection";
+import WebsiteProblemsSection from "@/components/sections/WebsiteProblemsSection";
 import PricingSection from "@/components/sections/PricingSection";
+import CaseStudyPreview from "@/components/sections/CaseStudyPreview";
+import FreePreviewSection from "@/components/sections/FreePreviewSection";
 import ProcessTimeline from "@/components/sections/ProcessTimeline";
-import FounderSection from "@/components/sections/FounderSection";
+import TeamSection from "@/components/sections/TeamSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactCTA from "@/components/sections/ContactCTA";
 
 export default function HomePage() {
   return (
     <>
-      <ScrollHero />
-      <PainPointsSection />
-      <ScrollStory />
-      <HomeCaseStudy />
+      <HeroSection />
+      <MarqueeStrip />
+
+      {/* Device showcase — floats below the hero fold */}
+      <section className="section container-x relative flex flex-col items-center">
+        <p className="mb-2 text-center text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-mistier)]">
+          How your site looks on every device
+        </p>
+        <h2 className="mb-16 text-center font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight sm:text-4xl">
+          Designed to convert, built to be found.
+        </h2>
+        <FloatingDeviceStack />
+      </section>
+
+      <FreePreviewSection />
+      <BusinessFitSection />
+      <WebsiteProblemsSection />
       <PricingSection />
+      <CaseStudyPreview />
+      <TeamSection />
       <ProcessTimeline />
-      <FounderSection />
       <FAQSection />
       <ContactCTA />
     </>

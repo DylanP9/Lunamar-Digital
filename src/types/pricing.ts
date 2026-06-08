@@ -10,6 +10,12 @@ export interface PricingPlan {
   badge: string;
   /** One-line positioning statement. */
   bestFor: string;
+  /** Business outcome shown before feature details. */
+  outcome: string;
+  /** Outcome bullets under "Designed to help you". */
+  helpsWith: string[];
+  /** Plain-English inclusion summary shown below the bullets. */
+  includedSummary: string;
   /** Key inclusions shown on the card. */
   features: string[];
   /** Minimum term wording. */

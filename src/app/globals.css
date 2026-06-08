@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  /* Tinted deep-navy base — not pure black, less "neon space". */
-  --color-ink: #070912;
-  --color-ink-soft: #0b0e1a;
-  --color-panel: #10131f;
+  /* Premium editorial base: calm, dark, and less "SaaS neon". */
+  --color-ink: #070b12;
+  --color-ink-soft: #0d121c;
+  --color-panel: #111827;
   --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-strong: rgba(255, 255, 255, 0.16);
-  --color-mist: rgba(232, 236, 247, 0.74);
-  --color-mistier: rgba(232, 236, 247, 0.56);
+  --color-line-strong: rgba(255, 255, 255, 0.18);
+  --color-mist: rgba(239, 244, 255, 0.76);
+  --color-mistier: rgba(239, 244, 255, 0.56);
+  --color-paper: #f6f3ec;
+  --color-paper-soft: #d9d2c2;
 
-  /* One disciplined accent (blue) with a restrained purple support. */
-  --color-blue: #6f9bff;
-  --color-blue-deep: #3f6bff;
-  --color-purple: #9d7bff;
-  --color-purple-deep: #7c4dff;
+  /* One disciplined accent: blue, tied to the existing Lunamar mark. */
+  --color-blue: #7fa3ff;
+  --color-blue-deep: #365dff;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-display: var(--font-space-grotesk), var(--font-sans);
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Aptos Display", "Segoe UI", var(--font-sans);
 
-  --radius-card: 1.25rem;
+  --radius-card: 0.875rem;
 
   --shadow-glow: 0 0 0 1px rgba(255, 255, 255, 0.06),
     0 30px 80px -40px rgba(91, 140, 255, 0.55);
@@ -47,16 +47,14 @@ body {
   overflow-x: hidden;
 }
 
-/* Ambient page background: one controlled glow from the top, plus a faint
-   lower accent. Deliberately restrained — depth, not a neon light show. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(70% 45% at 50% -8%, rgba(63, 107, 255, 0.16), transparent 60%),
-    radial-gradient(45% 35% at 88% 8%, rgba(124, 77, 255, 0.1), transparent 60%),
+    radial-gradient(55% 35% at 50% -10%, rgba(54, 93, 255, 0.13), transparent 62%),
+    linear-gradient(180deg, rgba(246, 243, 236, 0.035), transparent 22%),
     var(--color-ink);
 }
 
@@ -85,13 +83,9 @@ body::after {
 /* ---------- Utility component classes ---------- */
 
 .glass {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.02)
-  );
+  background: rgba(255, 255, 255, 0.035);
   border: 1px solid var(--color-line);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(10px);
 }
 
 .glow-border {
@@ -107,8 +101,8 @@ body::after {
   padding: 1px;
   background: linear-gradient(
     140deg,
-    rgba(91, 140, 255, 0.7),
-    rgba(164, 114, 255, 0.35) 40%,
+    rgba(127, 163, 255, 0.65),
+    rgba(246, 243, 236, 0.2) 42%,
     transparent 70%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -125,7 +119,7 @@ body::after {
 }
 
 .text-gradient {
-  background: linear-gradient(115deg, #ffffff 30%, #c5d4ff 75%, #b9a8ff 100%);
+  background: linear-gradient(115deg, #ffffff 24%, #dce5ff 72%, #9eb8ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -192,6 +186,15 @@ body::after {
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .animate-spin-slow {
   animation: spin-slow 48s linear infinite;
 }
@@ -203,6 +206,32 @@ body::after {
 }
 .animate-pulse-glow {
   animation: pulse-glow 5s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ring-pulse {
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.18);
+  }
+}
+
+.animate-ring-pulse {
+  animation: ring-pulse 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50% { transform: translateY(6px) translateX(-50%); }
 }
 
 /* Scroll reveal — opt-in via data attribute, toggled by IntersectionObserver. */

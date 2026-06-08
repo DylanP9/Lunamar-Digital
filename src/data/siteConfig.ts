@@ -1,37 +1,40 @@
 /**
  * Central site configuration.
  *
- * TODO (business): replace the placeholder contact details and domain below
- * with the confirmed values before launch. These are intentionally the only
- * place these values live — do not hard-code them elsewhere.
+ * Central place for core brand, URL and contact settings.
  */
 export const siteConfig = {
   name: "Lunamar Digital",
   shortName: "Lunamar",
-  tagline: "Websites that make you look the part.",
+  tagline: "Websites. Marketing. Growth.",
   description:
-    "Lunamar Digital builds websites, local SEO and social content for small service businesses: cafés, gyms, salons, trades and local shops. When someone looks you up, you look like a business worth choosing.",
+    "Lunamar Digital builds and maintains websites, SEO foundations and social content for serious small businesses that want to look trusted online.",
 
   /**
    * Canonical site URL — must match where the site is actually served, since it
    * drives canonical tags, OG image URLs, the sitemap and robots.
-   * TODO: switch to "https://lunamardigital.com" once that custom domain is
-   * connected to this Vercel project.
    */
-  url: "https://lunamar-digital.vercel.app",
+  url: "https://lunamardigital.com",
 
   /** Contact email. Confirm the final domain-based address before launch. */
-  email: "info@lunamardigital.com",
-  domain: "lunamardigital.com",
+  email: "Lunamardigital1@outlook.com",
+  domain: "lunamardigital.co.uk",
 
   /** Headline sales hook reused across the site. */
-  hook: "Websites, SEO and social for local businesses. From £149 a month, with no big bill upfront.",
+  hook: "No-upfront websites and monthly support plans from £149/month.",
 
-  /** Social profile placeholders. Replace href values when handles are live. */
+  /** Live social profiles. Keep this list to confirmed public URLs only. */
   socials: [
-    { label: "Instagram", href: "#", handle: "@lunamardigital" },
-    { label: "Facebook", href: "#", handle: "Lunamar Digital" },
-    { label: "LinkedIn", href: "#", handle: "Lunamar Digital" },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/lunamardigital/",
+      handle: "@lunamardigital",
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/dylan-polland/",
+      handle: "Dylan Polland",
+    },
   ],
 
   /** OpenGraph image lives in /public; replace with branded artwork later. */

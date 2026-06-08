@@ -91,7 +91,7 @@ export default function MobileNav() {
             <Link
               href={primaryCta.href}
               onClick={() => setOpen(false)}
-              className="mt-3 flex w-full items-center justify-center rounded-full bg-[linear-gradient(120deg,var(--color-blue-deep),var(--color-purple-deep))] px-6 py-3.5 text-base font-medium text-white"
+              className="mt-3 flex w-full items-center justify-center rounded-full bg-[var(--color-blue-deep)] px-6 py-3.5 text-base font-medium text-white"
             >
               {primaryCta.label}
             </Link>

@@ -5,8 +5,6 @@ import { siteConfig } from "@/data/siteConfig";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  // Only show social links once a real URL is set (avoids dead "#" links).
-  const liveSocials = siteConfig.socials.filter((social) => social.href !== "#");
 
   return (
     <footer className="relative mt-12 border-t border-[var(--color-line)]">
@@ -15,9 +13,8 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[var(--color-mist)]">
-              Websites, local SEO and social content for cafés, gyms, salons,
-              trades and local shops. Built to help local customers find you and
-              pick you over the competition.
+              {siteConfig.tagline} Websites, SEO foundations and social content
+              for serious small businesses.
             </p>
             <a
               href={`mailto:${siteConfig.email}`}
@@ -49,26 +46,20 @@ export default function Footer() {
             <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-mistier)]">
               Follow
             </h2>
-            {liveSocials.length ? (
-              <ul className="mt-4 space-y-3">
-                {liveSocials.map((social) => (
-                  <li key={social.label}>
-                    <a
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-[var(--color-mist)] transition-colors hover:text-white"
-                    >
-                      {social.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="mt-4 text-sm text-[var(--color-mist)]">
-                Social profiles coming soon.
-              </p>
-            )}
+            <ul className="mt-4 space-y-3">
+              {siteConfig.socials.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-[var(--color-mist)] transition-colors hover:text-white"
+                  >
+                    {social.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
             <Link
               href={primaryCta.href}
               className="mt-6 inline-flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"

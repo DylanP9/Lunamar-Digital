@@ -17,26 +17,35 @@ export const metadata: Metadata = {
 export default function GymVibeCafeCaseStudy() {
   if (!study) notFound();
   const [featuredMockup, ...supportingMockups] = study.mockups;
+  const whatChanged = [
+    {
+      title: "Social attention has a destination",
+      body: "Instead of sending people through scattered posts and DMs, the café now has a clear website concept for menu, location and meal-prep interest.",
+    },
+    {
+      title: "Local details are easier to trust",
+      body: "Customers can quickly check the address, opening hours, food offer and contact route before deciding to visit or call.",
+    },
+    {
+      title: "Ordering can be scoped properly",
+      body: "Square checkout foundations are acknowledged as preparation, not oversold as a live ordering system.",
+    },
+  ];
 
   return (
     <>
       <PageHero
         eyebrow={`${study.status} · ${study.sector}`}
         title={study.tagline}
-        description={study.summary}
+        description="A practical website preview for a real Glasgow café and meal-prep business, designed to move customers from social discovery to menu, location and ordering intent."
       />
 
       <section className="section pt-4">
         <div className="container-x">
           {featuredMockup ? (
             <Reveal>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <MockupCard mockup={featuredMockup} variant="hero" />
-                <div className="grid gap-6 md:grid-cols-3">
-                  {supportingMockups.map((mockup) => (
-                    <MockupCard key={mockup.label} mockup={mockup} variant="large" />
-                  ))}
-                </div>
               </div>
             </Reveal>
           ) : null}
@@ -48,6 +57,52 @@ export default function GymVibeCafeCaseStudy() {
           </Reveal>
         </div>
       </section>
+
+      <section className="section pt-0">
+        <div className="container-x">
+          <Reveal>
+            <blockquote className="mx-auto mb-8 max-w-3xl rounded-[var(--radius-card)] border border-[var(--color-line-strong)] bg-white/[0.04] p-7 text-center sm:p-9">
+              <p className="font-[family-name:var(--font-display)] text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl">
+                “They understood the brand and brought the website to life.”
+              </p>
+              <footer className="mt-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-mistier)]">
+                Gym Vibe Café
+              </footer>
+            </blockquote>
+          </Reveal>
+          <div className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-line)] bg-[var(--color-line)] lg:grid-cols-3">
+            {whatChanged.map((item, i) => (
+              <Reveal key={item.title} delay={i * 70}>
+                <article className="h-full bg-[var(--color-ink-soft)] p-7">
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-blue)]">
+                    Change 0{i + 1}
+                  </p>
+                  <h2 className="mt-4 font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-7 text-[var(--color-mist)]">
+                    {item.body}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {supportingMockups.length ? (
+        <section className="section pt-0">
+          <div className="container-x">
+            <div className="grid gap-6 md:grid-cols-3">
+              {supportingMockups.map((mockup, i) => (
+                <Reveal key={mockup.label} delay={i * 70}>
+                  <MockupCard mockup={mockup} variant="large" />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section pt-0">
         <div className="container-x grid gap-10 lg:grid-cols-[1.5fr_1fr]">
@@ -117,7 +172,7 @@ export default function GymVibeCafeCaseStudy() {
                       key={item}
                       className="flex items-center gap-2.5 text-sm text-white/85"
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-purple)]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-blue)]" />
                       {item}
                     </li>
                   ))}
@@ -145,7 +200,7 @@ export default function GymVibeCafeCaseStudy() {
             </Reveal>
 
             <Reveal delay={120}>
-              <div className="glow-border rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.03] p-6">
+              <div className="rounded-[var(--radius-card)] border border-[var(--color-line-strong)] bg-white/[0.04] p-6">
                 <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-mistier)]">
                   Current status
                 </h2>
@@ -160,7 +215,7 @@ export default function GymVibeCafeCaseStudy() {
 
       <ContactCTA
         title="Want a website like this for your business?"
-        description="Request a free preview and we'll show you a concept before you commit."
+        description="Apply for a free website preview and we'll show you a focused concept before you commit."
       />
     </>
   );
