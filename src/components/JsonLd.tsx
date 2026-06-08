@@ -30,7 +30,7 @@ export default function JsonLd({ schema }: JsonLdProps) {
     <>
       {schemas.map((s, i) => (
         <script
-          key={s["@id"] ?? s["@type"] ?? i}
+          key={i}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
         />
