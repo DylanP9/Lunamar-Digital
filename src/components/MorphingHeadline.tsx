@@ -21,9 +21,10 @@ const FADE_MS = 300;
 
 interface MorphingHeadlineProps {
   className?: string;
+  onWordChange?: () => void;
 }
 
-export default function MorphingHeadline({ className }: MorphingHeadlineProps) {
+export default function MorphingHeadline({ className, onWordChange }: MorphingHeadlineProps) {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -31,15 +32,16 @@ export default function MorphingHeadline({ className }: MorphingHeadlineProps) {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const cycle = setInterval(() => {
-      // Fade out
       setVisible(false);
       setTimeout(() => {
         setIndex((i) => (i + 1) % industries.length);
         setVisible(true);
+        onWordChange?.();
       }, FADE_MS);
     }, HOLD_MS + FADE_MS);
 
     return () => clearInterval(cycle);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

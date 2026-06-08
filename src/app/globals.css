@@ -214,6 +214,26 @@ body::after {
   animation-play-state: paused;
 }
 
+@keyframes ring-pulse {
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.18);
+  }
+}
+
+.animate-ring-pulse {
+  animation: ring-pulse 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50% { transform: translateY(6px) translateX(-50%); }
+}
+
 /* Scroll reveal — opt-in via data attribute, toggled by IntersectionObserver. */
 [data-reveal] {
   opacity: 0;
