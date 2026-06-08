@@ -1,28 +1,40 @@
 /**
- * Renders a JSON-LD <script> tag for structured data / rich results.
+ * Renders JSON-LD <script> tags for structured data / rich results.
+ *
+ * One <script type="application/ld+json"> is rendered per schema object.
+ * Google requires separate script blocks — a JSON array in a single block
+ * is not reliably parsed by the Rich Results Test or Googlebot.
  *
  * Usage:
  *   import JsonLd from "@/components/JsonLd";
  *   import { buildLocalBusinessSchema } from "@/lib/schema";
  *
+ *   // Single schema
  *   <JsonLd schema={buildLocalBusinessSchema()} />
  *
- * For multiple schemas on one page pass an array:
+ *   // Multiple schemas — renders one <script> tag each
  *   <JsonLd schema={[buildLocalBusinessSchema(), buildWebSiteSchema()]} />
  */
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type SchemaObject = Record<string, any>;
+
 interface JsonLdProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  schema: Record<string, any> | Record<string, any>[];
+  schema: SchemaObject | SchemaObject[];
 }
 
 export default function JsonLd({ schema }: JsonLdProps) {
+  const schemas = Array.isArray(schema) ? schema : [schema];
+
   return (
-    <script
-      type="application/ld+json"
-      // Next.js 15 allows dangerouslySetInnerHTML on <script> in Server Components.
-      // JSON.stringify is safe here — schema values come from our own data files.
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      {schemas.map((s, i) => (
+        <script
+          key={s["@id"] ?? s["@type"] ?? i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
+    </>
   );
 }
