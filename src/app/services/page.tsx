@@ -10,7 +10,7 @@ import { primaryCta } from "@/data/navigation";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Website design, SEO, local SEO, social media management, digital marketing, conversion optimisation and maintenance — delivered through simple monthly plans.",
+    "Website design, SEO, social media and maintenance for small service businesses, delivered through simple monthly plans.",
   alternates: { canonical: "/services" },
 };
 
@@ -21,8 +21,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Websites, visibility and marketing — joined up."
-        description="Everything you need to launch sharper and grow smarter, delivered as one connected system rather than disconnected one-off projects."
+        title="What we actually do for your business."
+        description="Every service here exists for one reason: to help customers choose you. For each one, here's what's included, why it matters and what isn't covered by default."
       >
         <Button href={primaryCta.href}>{primaryCta.label}</Button>
       </PageHero>
@@ -52,28 +52,72 @@ export default function ServicesPage() {
                   <p className="mt-3 max-w-2xl text-base leading-relaxed text-[var(--color-mist)]">
                     {service.detail}
                   </p>
-                  <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
-                    {service.points.map((point) => (
-                      <li
-                        key={point}
-                        className="flex items-start gap-2.5 text-sm text-white/85"
-                      >
-                        <svg
-                          className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-blue)]"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          aria-hidden
-                        >
-                          <path d="M20 6 9 17l-5-5" />
-                        </svg>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+
+                  {service.whyItMatters ? (
+                    <p className="mt-5 max-w-2xl border-l-2 border-[var(--color-blue)] pl-4 text-sm italic leading-relaxed text-white/90">
+                      {service.whyItMatters}
+                    </p>
+                  ) : null}
+
+                  <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                    <div>
+                      <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-mistier)]">
+                        What you get
+                      </h3>
+                      <ul className="mt-3 space-y-2.5">
+                        {service.points.map((point) => (
+                          <li
+                            key={point}
+                            className="flex items-start gap-2.5 text-sm text-white/85"
+                          >
+                            <svg
+                              className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-blue)]"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth={2}
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              aria-hidden
+                            >
+                              <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {service.notIncluded?.length ? (
+                      <div>
+                        <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-mistier)]">
+                          Not included by default
+                        </h3>
+                        <ul className="mt-3 space-y-2.5">
+                          {service.notIncluded.map((point) => (
+                            <li
+                              key={point}
+                              className="flex items-start gap-2.5 text-sm text-[var(--color-mist)]"
+                            >
+                              <svg
+                                className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-mistier)]"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                aria-hidden
+                              >
+                                <path d="M18 6 6 18M6 6l12 12" />
+                              </svg>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
               </article>
             </Reveal>

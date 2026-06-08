@@ -5,14 +5,20 @@ export const services: Service[] = [
     id: "websites",
     title: "Websites",
     summary:
-      "Fast, mobile-first websites designed to turn visitors into calls, bookings, enquiries and sales.",
+      "Fast, phone-first websites that turn visitors into calls, bookings and enquiries.",
     detail:
-      "We design and build modern, mobile-first websites with clean structure and clear customer journeys. Every page is built to load fast, look sharp on any device and guide visitors towards the action that grows your business.",
+      "We design and build phone-first websites with clean structure and clear customer journeys. Every page loads fast, looks sharp on any device and points visitors towards the action that grows your business.",
     points: [
       "Custom, mobile-first design",
       "Clear calls to action on every page",
       "Performance and Core Web Vitals focus",
       "Built on a modern, maintainable stack",
+    ],
+    whyItMatters:
+      "Most people size up your business on their phone in a few seconds. A clean, fast site makes that first impression a good one.",
+    notIncluded: [
+      "Online ordering, booking or payments (scoped separately)",
+      "Photography or video shoots (quoted separately)",
     ],
     icon: "globe",
   },
@@ -29,6 +35,12 @@ export const services: Service[] = [
       "Structured metadata and clean markup",
       "Content structure built around real search intent",
     ],
+    whyItMatters:
+      "When someone searches for what you do nearby, you want to be the business they find, not the competitor whose basics are set up while yours aren't.",
+    notIncluded: [
+      "Guaranteed #1 rankings (no honest agency can promise those)",
+      "Paid Google Ads management (available separately; ad spend is always separate)",
+    ],
     icon: "search",
   },
   {
@@ -44,20 +56,32 @@ export const services: Service[] = [
       "Story content from your supplied media",
       "Monthly offer and service highlights",
     ],
+    whyItMatters:
+      "Post consistently and a busy business looks busy online too, which keeps you front of mind between visits.",
+    notIncluded: [
+      "Photography or video shoots (quoted separately)",
+      "Replying to comments and DMs / community management",
+    ],
     icon: "share",
   },
   {
     id: "digital-marketing",
     title: "Digital Marketing",
     summary:
-      "Campaigns, content and conversion systems built around real business outcomes.",
+      "Campaigns, content and conversion work built around results you can actually measure.",
     detail:
-      "We plan and run campaigns that connect to outcomes you actually care about — enquiries, bookings and sales. Content, offers and conversion systems work together so your marketing pulls in one direction.",
+      "We plan and run campaigns around the outcomes you actually care about: enquiries, bookings and sales. Content, offers and conversion all pull in the same direction instead of working in silos.",
     points: [
       "Campaign and promo planning",
       "Content and offer strategy",
       "Conversion-focused landing pages",
       "Optional paid ad management (ad spend billed separately)",
+    ],
+    whyItMatters:
+      "Marketing only counts if it brings in enquiries, bookings and sales. That's what we plan around, not likes and impressions.",
+    notIncluded: [
+      "Ad spend (always paid directly by you, never marked up)",
+      "Available on the Partner plan or as a separately scoped project",
     ],
     icon: "rocket",
   },
@@ -74,13 +98,18 @@ export const services: Service[] = [
       "Trust-building page structure",
       "Ongoing conversion improvements",
     ],
+    whyItMatters:
+      "You don't always need more visitors. Often you just need more of the ones you already get to actually call, book or buy.",
+    notIncluded: [
+      "Custom CRM or complex automation builds (scoped separately)",
+    ],
     icon: "target",
   },
   {
     id: "maintenance",
     title: "Maintenance",
     summary:
-      "Ongoing updates, optimisation and support so your digital presence does not go stale.",
+      "Ongoing updates, fixes and support so your site stays current instead of slowly going out of date.",
     detail:
       "Your plan includes hosting support and small content updates, so your site stays current without surprise invoices. We keep things fast, secure and up to date while you focus on running your business.",
     points: [
@@ -88,6 +117,12 @@ export const services: Service[] = [
       "Small content updates each month",
       "Performance and security upkeep",
       "Priority support on higher plans",
+    ],
+    whyItMatters:
+      "A website is never really finished. Prices change, hours change, offers come and go. We keep yours up to date so it never looks neglected.",
+    notIncluded: [
+      "Unlimited updates or full redesigns",
+      "New pages and custom features (quoted separately)",
     ],
     icon: "shield",
   },
@@ -101,7 +136,7 @@ export const optionalService: Service = {
   id: "ecommerce-payments",
   title: "Ecommerce & Payments",
   summary:
-    "Ordering, bookings and checkout foundations — scoped and quoted separately when you need them.",
+    "Ordering, bookings and checkout foundations, scoped and quoted separately for when you're ready.",
   detail:
     "When your business is ready for online ordering, bookings or payments, we can scope and build it on top of your site. These features are quoted separately from monthly plans so pricing stays honest and clear.",
   points: [

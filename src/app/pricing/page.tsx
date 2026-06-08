@@ -11,7 +11,7 @@ import { faqs } from "@/data/faqs";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Transparent monthly website and digital growth plans from £149/month. No upfront website cost — compare the Core, Grow and Partner plans from Lunamar Digital.",
+    "Monthly website and growth plans from £149 a month, with no upfront build cost. Compare the Core, Advanced Web & SEO, Grow and Partner plans from Lunamar Digital.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -21,7 +21,7 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="Monthly plans, no upfront website cost."
-        description="Instead of paying thousands upfront for a website, launch with a professional website and ongoing support through a simple monthly plan — from £149/month. Four clear tiers, no hidden build fees."
+        description="Instead of paying thousands upfront, you launch with a proper website and ongoing support on one monthly plan from £149. Four clear tiers, no hidden build fees."
       />
 
       <section className="section pt-0">

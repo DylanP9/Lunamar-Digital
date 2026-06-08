@@ -37,7 +37,7 @@ export const pricingPlans: PricingPlan[] = [
     cadence: "/month",
     badge: "Web-Only",
     bestFor:
-      "Businesses that want a larger, premium website and advanced SEO — without social media. Pay only for the high-intent Google traffic you actually want.",
+      "Businesses that want a bigger website and serious local SEO, without social media. You focus the budget on Google and skip the channels you don't use.",
     features: [
       "Up to 10 pages",
       "Custom layouts (FAQs, Team, Portfolio)",
@@ -45,7 +45,7 @@ export const pricingPlans: PricingPlan[] = [
       "Google Business Profile optimisation",
       "Speed & performance optimisation",
       "Ongoing technical maintenance",
-      "No social media — Google-focused growth",
+      "No social media, just Google-focused growth",
     ],
     term: "12-month minimum term",
   },
@@ -189,7 +189,7 @@ export const terms = [
   "Small updates cover reasonable content changes (text, images, prices, hours, services, links, small promos) and are limited to around 2 hours per month unless your plan states otherwise.",
   "Paid ads, content shoots, ordering / booking / payment systems and custom features are quoted separately. Ad spend is always paid separately.",
   "Social posts are created from supplied content and approved in batches; if no edits are requested within 72 hours, posts may be scheduled as prepared.",
-  "We don't guarantee specific sales, rankings, enquiries, followers or revenue — we build the systems that make those outcomes more likely.",
+  "We don't guarantee specific sales, rankings, enquiries, followers or revenue. We build the things that make those results more likely.",
 ];
 
 /**
@@ -197,4 +197,4 @@ export const terms = [
  * card grid so £149 remains the public entry point.
  */
 export const foundingRateNote =
-  "A limited founding-client rate may be available by invitation for our first few clients. It isn't a public package — ask us if you'd like to be considered.";
+  "A limited founding-client rate may be available by invitation for our first few clients. It isn't a public package, so ask us if you'd like to be considered.";

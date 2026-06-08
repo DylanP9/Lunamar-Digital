@@ -39,7 +39,7 @@ export default function ContactPage() {
                   {[
                     "We read your enquiry and reply, usually within one business day.",
                     "For selected businesses, we put together a free preview concept.",
-                    "If it's a fit, we confirm a plan and get started — no upfront website cost.",
+                    "If it's a fit, we confirm a plan and get started, with no upfront website cost.",
                   ].map((step, i) => (
                     <li key={step} className="flex items-start gap-3 text-sm">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[var(--color-line)] text-xs font-medium text-[var(--color-blue)]">

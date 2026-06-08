@@ -15,8 +15,9 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[var(--color-mist)]">
-              {siteConfig.tagline} Digital systems that help growing businesses
-              turn online attention into real customers.
+              Websites, local SEO and social content for cafés, gyms, salons,
+              trades and local shops. Built to help local customers find you and
+              pick you over the competition.
             </p>
             <a
               href={`mailto:${siteConfig.email}`}

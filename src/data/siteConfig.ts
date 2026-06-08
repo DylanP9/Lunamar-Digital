@@ -8,24 +8,24 @@
 export const siteConfig = {
   name: "Lunamar Digital",
   shortName: "Lunamar",
-  tagline: "Websites. Marketing. Growth.",
+  tagline: "Websites that make you look the part.",
   description:
-    "Lunamar Digital creates premium websites, SEO systems and digital marketing strategies that help businesses grow online.",
+    "Lunamar Digital builds websites, local SEO and social content for small service businesses: cafés, gyms, salons, trades and local shops. When someone looks you up, you look like a business worth choosing.",
 
   /**
    * Canonical site URL — must match where the site is actually served, since it
    * drives canonical tags, OG image URLs, the sitemap and robots.
-   * TODO: switch to "https://lunamardigital.co.uk" once that custom domain is
+   * TODO: switch to "https://lunamardigital.com" once that custom domain is
    * connected to this Vercel project.
    */
   url: "https://lunamar-digital.vercel.app",
 
   /** Contact email. Confirm the final domain-based address before launch. */
-  email: "Lunamardigital1@outlook.com",
-  domain: "lunamardigital.co.uk",
+  email: "info@lunamardigital.com",
+  domain: "lunamardigital.com",
 
   /** Headline sales hook reused across the site. */
-  hook: "No-upfront websites and digital growth plans from £149/month.",
+  hook: "Websites, SEO and social for local businesses. From £149 a month, with no big bill upfront.",
 
   /** Social profile placeholders. Replace href values when handles are live. */
   socials: [

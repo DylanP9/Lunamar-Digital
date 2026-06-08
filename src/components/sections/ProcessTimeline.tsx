@@ -4,44 +4,34 @@ import { processSteps } from "@/data/content";
 
 export default function ProcessTimeline() {
   return (
-    <section className="section">
+    <section className="section" id="process">
       <div className="container-x">
         <SectionHeader
+          align="left"
           eyebrow="How it works"
-          title="A clear path from idea to growth"
-          description="A simple, four-step process that takes you from first conversation to a website that keeps improving."
+          title="From first look to live in a few weeks."
+          description="A clear, founder-led process with no jargon and no surprise costs. You'll always know what's happening and what's next."
         />
 
-        <div className="relative mt-14">
-          {/* Vertical glowing line (hidden on small screens) */}
-          <div
-            aria-hidden="true"
-            className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,rgba(91,140,255,0.5),rgba(164,114,255,0.5),transparent)] lg:block"
-          />
-
-          <ol className="space-y-5 lg:space-y-0">
-            {processSteps.map((step, i) => (
-              <li key={step.number} className="lg:grid lg:grid-cols-2 lg:gap-12">
-                <Reveal
-                  delay={i * 80}
-                  className={i % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2"}
-                >
-                  <div className="glow-border relative rounded-[var(--radius-card)] border border-[var(--color-line)] bg-white/[0.02] p-7 lg:my-6">
-                    <span className="font-[family-name:var(--font-display)] text-3xl font-semibold text-transparent [-webkit-text-stroke:1px_rgba(91,140,255,0.6)]">
-                      {step.number}
-                    </span>
-                    <h3 className="mt-3 font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-mist)]">
-                      {step.description}
-                    </p>
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <ol className="mt-14 border-t border-[var(--color-line)]">
+          {processSteps.map((step) => (
+            <li key={step.number}>
+              <Reveal>
+                <div className="grid items-baseline gap-3 border-b border-[var(--color-line)] py-7 md:grid-cols-[5rem_minmax(0,15rem)_1fr] md:gap-8 md:py-9">
+                  <span className="font-[family-name:var(--font-display)] text-2xl font-semibold text-transparent [-webkit-text-stroke:1px_rgba(111,155,255,0.55)]">
+                    {step.number}
+                  </span>
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight text-white md:text-2xl">
+                    {step.title}
+                  </h3>
+                  <p className="max-w-xl text-sm leading-relaxed text-[var(--color-mist)] md:text-base">
+                    {step.description}
+                  </p>
+                </div>
+              </Reveal>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

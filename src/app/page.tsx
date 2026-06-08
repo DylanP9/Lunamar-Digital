@@ -1,29 +1,23 @@
-import HeroSection from "@/components/sections/HeroSection";
-import ValueStrip from "@/components/sections/ValueStrip";
-import ServicesSection from "@/components/sections/ServicesSection";
-import MembershipSection from "@/components/sections/MembershipSection";
+import ScrollHero from "@/components/sections/ScrollHero";
+import PainPointsSection from "@/components/sections/PainPointsSection";
+import ScrollStory from "@/components/sections/ScrollStory";
+import HomeCaseStudy from "@/components/sections/HomeCaseStudy";
 import PricingSection from "@/components/sections/PricingSection";
-import CaseStudyPreview from "@/components/sections/CaseStudyPreview";
-import FreePreviewSection from "@/components/sections/FreePreviewSection";
 import ProcessTimeline from "@/components/sections/ProcessTimeline";
-import OutcomesSection from "@/components/sections/OutcomesSection";
-import TeamSection from "@/components/sections/TeamSection";
+import FounderSection from "@/components/sections/FounderSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactCTA from "@/components/sections/ContactCTA";
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <ValueStrip />
-      <ServicesSection />
-      <MembershipSection />
+      <ScrollHero />
+      <PainPointsSection />
+      <ScrollStory />
+      <HomeCaseStudy />
       <PricingSection />
-      <CaseStudyPreview />
-      <FreePreviewSection />
       <ProcessTimeline />
-      <OutcomesSection />
-      <TeamSection />
+      <FounderSection />
       <FAQSection />
       <ContactCTA />
     </>

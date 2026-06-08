@@ -9,7 +9,7 @@ import { caseStudies } from "@/data/caseStudies";
 export const metadata: Metadata = {
   title: "Work & Case Studies",
   description:
-    "Selected work from Lunamar Digital, including our active Gym Vibe Café project — a mobile-first, ordering-ready website concept.",
+    "Selected work from Lunamar Digital, including our active Gym Vibe Café project, a phone-first, ordering-ready website concept.",
   alternates: { canonical: "/work" },
 };
 
@@ -19,7 +19,7 @@ export default function WorkPage() {
       <PageHero
         eyebrow="Work"
         title="Projects built for growth."
-        description="A focused selection of our work. We feature projects honestly — including those still in progress — rather than padding the page with invented clients."
+        description="A focused selection of our work. We show projects honestly, including the ones still in progress, rather than padding the page with invented clients."
       />
 
       <section className="section pt-4">
