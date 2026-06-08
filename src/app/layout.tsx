@@ -3,7 +3,9 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { siteConfig } from "@/data/siteConfig";
+import { buildLocalBusinessSchema, buildWebSiteSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -59,6 +61,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <JsonLd schema={[buildLocalBusinessSchema(), buildWebSiteSchema()]} />
         <Header />
         <main id="main">{children}</main>
         <Footer />

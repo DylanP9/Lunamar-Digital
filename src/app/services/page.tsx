@@ -4,8 +4,10 @@ import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import ContactCTA from "@/components/sections/ContactCTA";
+import JsonLd from "@/components/JsonLd";
 import { services, optionalService } from "@/data/services";
 import { primaryCta } from "@/data/navigation";
+import { buildServiceListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -19,6 +21,7 @@ const allServices = [...services, optionalService];
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd schema={buildServiceListSchema(allServices)} />
       <PageHero
         eyebrow="Services"
         title="The practical digital work small businesses actually need."
