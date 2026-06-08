@@ -16,12 +16,12 @@
  *   <JsonLd schema={[buildLocalBusinessSchema(), buildWebSiteSchema()]} />
  */
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type SchemaObject = Record<string, any>;
+type SchemaObject = Record<string, unknown>;
 
 interface JsonLdProps {
   schema: SchemaObject | SchemaObject[];
 }
+
 
 export default function JsonLd({ schema }: JsonLdProps) {
   const schemas = Array.isArray(schema) ? schema : [schema];
