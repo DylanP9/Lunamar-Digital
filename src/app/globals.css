@@ -234,6 +234,24 @@ body::after {
   50% { transform: translateY(6px) translateX(-50%); }
 }
 
+/* Page transition — replayed on every route change via app/template.tsx.
+   The template remounts on navigation, so this entrance animation fires fresh
+   each time, giving a smooth fade-and-rise between pages. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.5s var(--ease-out-soft) both;
+}
+
 /* Scroll reveal — opt-in via data attribute, toggled by IntersectionObserver. */
 [data-reveal] {
   opacity: 0;

@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+const isDev = process.env.NODE_ENV === "development";
+
 /**
  * HTTP Security Headers
  *
@@ -9,6 +11,8 @@
  * Notes:
  * - CSP allows 'unsafe-inline' for scripts because Next.js injects inline
  *   bootstrap scripts that cannot be removed without nonce complexity.
+ * - 'unsafe-eval' is added ONLY in development — React's dev tooling and
+ *   Turbopack HMR require eval(). It is never shipped to production.
  * - formsubmit.co is whitelisted as a form-action target (contact form).
  * - va.vercel-scripts.com is whitelisted for Vercel Web Analytics.
  * - vitals.vercel-insights.com is whitelisted for Vercel Speed Insights.
@@ -45,8 +49,9 @@ const securityHeaders = [
     value: [
       // Default: only load from same origin
       "default-src 'self'",
-      // Scripts: same origin + inline (Next.js bootstrap) + Vercel Analytics
-      "script-src 'self' 'unsafe-inline' va.vercel-scripts.com",
+      // Scripts: same origin + inline (Next.js bootstrap) + Vercel Analytics.
+      // 'unsafe-eval' is dev-only (React Fast Refresh / Turbopack HMR).
+      `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} va.vercel-scripts.com`,
       // Styles: same origin + inline (Tailwind CSS-in-JS)
       "style-src 'self' 'unsafe-inline'",
       // Images: same origin + data URIs (inline SVGs) + blob (canvas)

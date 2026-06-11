@@ -17,7 +17,7 @@ export const siteConfig = {
   url: "https://lunamardigital.com",
 
   /** Contact email. Confirm the final domain-based address before launch. */
-  email: "Lunamardigital1@outlook.com",
+  email: "info@lunamardigital.com",
   domain: "lunamardigital.co.uk",
 
   /** Headline sales hook reused across the site. */

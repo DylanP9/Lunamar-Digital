@@ -8,23 +8,27 @@ export default function FloatingDeviceStack() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Parallax only applies in the floating (sm+) layout. On small screens the
+    // devices are in normal flow, so we skip the scroll transform entirely.
+    const desktop = window.matchMedia("(min-width: 640px)");
+    if (!desktop.matches) return;
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="relative h-[480px] w-full select-none lg:h-[560px]">
+    <div className="relative flex w-full select-none flex-col items-center gap-6 sm:block sm:h-[480px] sm:gap-0 lg:h-[560px]">
 
       {/* Ambient glow underneath */}
       <div
         aria-hidden
-        className="absolute bottom-8 left-[10%] h-28 w-[60%] rounded-full bg-[var(--color-blue-deep)] opacity-20 blur-3xl"
+        className="pointer-events-none absolute bottom-8 left-[10%] hidden h-28 w-[60%] rounded-full bg-[var(--color-blue-deep)] opacity-20 blur-3xl sm:block"
       />
 
       {/* Desktop browser mockup — back layer, drifts down slowly on scroll */}
       <div
-        className="absolute left-0 top-0 w-[76%]"
+        className="relative w-full max-w-[440px] sm:absolute sm:left-0 sm:top-0 sm:w-[76%] sm:max-w-none"
         style={{
           transform: `translateY(${scrollY * 0.07}px)`,
           animation: "float-y 8s cubic-bezier(0.22,1,0.36,1) infinite",
@@ -47,7 +51,7 @@ export default function FloatingDeviceStack() {
               alt="Gym Vibe Cafe website on desktop"
               width={1440}
               height={900}
-              sizes="40vw"
+              sizes="(max-width: 640px) 90vw, 40vw"
               quality={90}
               priority
               className="h-full w-full object-cover object-top"
@@ -58,7 +62,7 @@ export default function FloatingDeviceStack() {
 
       {/* Phone mockup — front layer, drifts up faster on scroll */}
       <div
-        className="absolute bottom-0 right-0 w-[30%]"
+        className="relative -mt-16 w-2/5 max-w-[150px] sm:absolute sm:bottom-0 sm:right-0 sm:mt-0 sm:w-[30%] sm:max-w-none"
         style={{
           transform: `translateY(${scrollY * -0.11}px)`,
           animation: "float-y 5.5s cubic-bezier(0.22,1,0.36,1) infinite",
@@ -77,7 +81,7 @@ export default function FloatingDeviceStack() {
               alt="Gym Vibe Cafe website on mobile"
               width={390}
               height={844}
-              sizes="15vw"
+              sizes="(max-width: 640px) 35vw, 15vw"
               quality={90}
               priority
               className="h-full w-full object-cover object-top"
@@ -91,7 +95,7 @@ export default function FloatingDeviceStack() {
       </div>
 
       {/* Badge */}
-      <div className="absolute -bottom-5 left-4 right-[33%] rounded-xl border border-[var(--color-line)] bg-[var(--color-ink)]/90 px-5 py-4 shadow-2xl backdrop-blur">
+      <div className="relative w-full max-w-[440px] rounded-xl border border-[var(--color-line)] bg-[var(--color-ink)]/90 px-5 py-4 shadow-2xl backdrop-blur sm:absolute sm:-bottom-5 sm:left-4 sm:right-[33%] sm:w-auto sm:max-w-none">
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-blue)]">
           Live client preview
         </p>

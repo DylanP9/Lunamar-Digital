@@ -10,7 +10,7 @@
 - **Prepared by:** Lunamar Digital
 - **Date:** [DD Month YYYY]
 - **Proposal valid until:** [date]
-- **Contact:** Lunamardigital1@outlook.com
+- **Contact:** info@lunamardigital.com
 
 ---
 

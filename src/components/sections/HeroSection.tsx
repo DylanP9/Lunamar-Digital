@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Button from "@/components/Button";
+import Magnetic from "@/components/Magnetic";
 import StarField from "@/components/StarField";
 import CosmicRings from "@/components/CosmicRings";
 import MorphingHeadline from "@/components/MorphingHeadline";
@@ -57,12 +58,16 @@ export default function HeroSection() {
 
         {/* CTAs */}
         <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
-          <Button href="/contact" size="lg">
-            Apply for a free website preview
-          </Button>
-          <Button href="/pricing" variant="secondary" size="lg">
-            View monthly plans
-          </Button>
+          <Magnetic>
+            <Button href="/contact" size="lg">
+              Apply for a free website preview
+            </Button>
+          </Magnetic>
+          <Magnetic>
+            <Button href="/pricing" variant="secondary" size="lg">
+              View monthly plans
+            </Button>
+          </Magnetic>
         </div>
 
         {/* Trust stats */}

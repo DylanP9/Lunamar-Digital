@@ -1,6 +1,7 @@
 import HeroSection from "@/components/sections/HeroSection";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import FloatingDeviceStack from "@/components/FloatingDeviceStack";
+import StatsBento from "@/components/sections/StatsBento";
 import BusinessFitSection from "@/components/sections/BusinessFitSection";
 import WebsiteProblemsSection from "@/components/sections/WebsiteProblemsSection";
 import PricingSection from "@/components/sections/PricingSection";
@@ -28,6 +29,7 @@ export default function HomePage() {
         <FloatingDeviceStack />
       </section>
 
+      <StatsBento />
       <FreePreviewSection />
       <BusinessFitSection />
       <WebsiteProblemsSection />

@@ -30,7 +30,7 @@ export default function Header() {
       <div className="container-x flex h-16 items-center justify-between">
         <Logo />
 
-        <nav aria-label="Primary" className="hidden md:block">
+        <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {mainNav.map((link) => {
               const active = pathname === link.href;
@@ -39,7 +39,7 @@ export default function Header() {
                   <Link
                     href={link.href}
                     aria-current={active ? "page" : undefined}
-                    className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                    className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                       active
                         ? "text-white"
                         : "text-[var(--color-mist)] hover:text-white"
@@ -53,12 +53,13 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link
             href={primaryCta.href}
-            className="inline-flex items-center gap-2 rounded-full bg-[var(--color-blue-deep)] px-5 py-2.5 text-sm font-medium text-white shadow-[0_10px_40px_-12px_rgba(91,140,255,0.7)] transition-transform duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-[var(--color-blue-deep)] px-5 py-2.5 text-sm font-medium text-white shadow-[0_10px_40px_-12px_rgba(91,140,255,0.7)] transition-transform duration-300 hover:-translate-y-0.5"
           >
-            {primaryCta.label}
+            Free website preview
+            <span aria-hidden>&rarr;</span>
           </Link>
         </div>
 

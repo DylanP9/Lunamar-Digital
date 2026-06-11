@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CursorGlow from "@/components/CursorGlow";
 import JsonLd from "@/components/JsonLd";
 import { siteConfig } from "@/data/siteConfig";
 import { buildLocalBusinessSchema, buildWebSiteSchema } from "@/lib/schema";
@@ -62,6 +63,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <JsonLd schema={[buildLocalBusinessSchema(), buildWebSiteSchema()]} />
+        <CursorGlow />
         <Header />
         <main id="main">{children}</main>
         <Footer />
