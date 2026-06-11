@@ -8,8 +8,8 @@ interface ContactCTAProps {
 }
 
 export default function ContactCTA({
-  title = "Ready to build a stronger digital presence?",
-  description = "Start with a preview. We will show you what your business could look like online before you commit.",
+  title = "See your new homepage before you commit.",
+  description = "Tell us about your business. If we're a good fit, we'll design a free preview of your homepage so you can see it first. No cost, nothing to commit to.",
 }: ContactCTAProps) {
   return (
     <section className="section">
@@ -36,7 +36,7 @@ export default function ContactCTA({
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                View pricing
+                View packages
               </Button>
             </div>
           </div>

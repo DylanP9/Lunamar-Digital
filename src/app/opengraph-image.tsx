@@ -1,7 +1,8 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/data/siteConfig";
 
-export const alt = "Lunamar Digital — Websites. Marketing. Growth.";
+export const alt =
+  "Lunamar Digital — websites, SEO and social for local service businesses.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -56,10 +57,10 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ marginTop: 22, fontSize: 30, color: "#aeb6c9" }}>
-          Websites. Marketing. Growth.
+          Websites that make you look the part.
         </div>
         <div style={{ marginTop: 14, fontSize: 22, color: "#7f8aa3" }}>
-          No upfront website cost · Plans from £149/month
+          For local service businesses. From £149 a month.
         </div>
       </div>
     ),

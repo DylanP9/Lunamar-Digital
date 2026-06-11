@@ -29,7 +29,7 @@ export default function ThankYouPage() {
           </svg>
         </div>
         <h1 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-          Thanks — your request is in.
+          Thanks, your request is in.
         </h1>
         <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-[var(--color-mist)]">
           We&apos;ve received your enquiry and will get back to you, usually

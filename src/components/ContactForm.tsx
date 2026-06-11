@@ -179,13 +179,14 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className={labelClass}>
-          Message
+          What would you like to improve?
         </label>
         <textarea
           id="message"
           name="message"
           rows={5}
           required
+          placeholder="e.g. no website yet, hard to find on Google, site looks dated on mobile, posting isn't consistent…"
           className={`${fieldClass} resize-y`}
         />
       </div>

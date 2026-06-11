@@ -18,7 +18,7 @@ export const siteConfig = {
 
   /** Contact email. Confirm the final domain-based address before launch. */
   email: "info@lunamardigital.com",
-  domain: "lunamardigital.co.uk",
+  domain: "lunamardigital.com",
 
   /** Headline sales hook reused across the site. */
   hook: "No-upfront websites and monthly support plans from £149/month.",

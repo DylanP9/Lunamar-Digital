@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const isDev = process.env.NODE_ENV === "development";
-
 /**
  * HTTP Security Headers
  *
@@ -11,12 +9,24 @@ const isDev = process.env.NODE_ENV === "development";
  * Notes:
  * - CSP allows 'unsafe-inline' for scripts because Next.js injects inline
  *   bootstrap scripts that cannot be removed without nonce complexity.
- * - 'unsafe-eval' is added ONLY in development — React's dev tooling and
- *   Turbopack HMR require eval(). It is never shipped to production.
  * - formsubmit.co is whitelisted as a form-action target (contact form).
  * - va.vercel-scripts.com is whitelisted for Vercel Web Analytics.
  * - vitals.vercel-insights.com is whitelisted for Vercel Speed Insights.
  */
+// React/Next development tooling (Fast Refresh, the error overlay, source
+// reconstruction) relies on eval() and websocket-based HMR. Production React
+// never uses eval(), so we relax the CSP ONLY in development and keep the
+// deployed site strict.
+const isDev = process.env.NODE_ENV !== "production";
+
+const scriptSrc =
+  "script-src 'self' 'unsafe-inline' va.vercel-scripts.com" +
+  (isDev ? " 'unsafe-eval'" : "");
+
+const connectSrc =
+  "connect-src 'self' vitals.vercel-insights.com va.vercel-scripts.com" +
+  (isDev ? " ws: wss:" : "");
+
 const securityHeaders = [
   // Prevent clickjacking — no iframing this site from other origins.
   {
@@ -50,16 +60,16 @@ const securityHeaders = [
       // Default: only load from same origin
       "default-src 'self'",
       // Scripts: same origin + inline (Next.js bootstrap) + Vercel Analytics.
-      // 'unsafe-eval' is dev-only (React Fast Refresh / Turbopack HMR).
-      `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} va.vercel-scripts.com`,
+      // 'unsafe-eval' is appended in development only (see scriptSrc above).
+      scriptSrc,
       // Styles: same origin + inline (Tailwind CSS-in-JS)
       "style-src 'self' 'unsafe-inline'",
       // Images: same origin + data URIs (inline SVGs) + blob (canvas)
       "img-src 'self' data: blob:",
       // Fonts: same origin only
       "font-src 'self'",
-      // XHR / fetch: same origin + Vercel vitals
-      "connect-src 'self' vitals.vercel-insights.com va.vercel-scripts.com",
+      // XHR / fetch: same origin + Vercel vitals (+ websockets in dev for HMR)
+      connectSrc,
       // Forms can only submit to same origin or FormSubmit
       "form-action 'self' formsubmit.co",
       // No iframing this site from anywhere
