@@ -4,7 +4,15 @@ import { caseStudies } from "@/data/caseStudies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
-  const routes = ["", "/services", "/pricing", "/work", "/contact", "/privacy"];
+  const routes = [
+    "",
+    "/services",
+    "/pricing",
+    "/work",
+    "/team",
+    "/contact",
+    "/privacy",
+  ];
 
   const staticRoutes = routes.map((route) => ({
     url: `${base}${route}`,

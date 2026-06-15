@@ -19,7 +19,7 @@ export const team: TeamMember[] = [
     name: "Dylan",
     role: "Co-Founder",
     image: "/images/team/dylan.jpg",
-    focus: "50% 30%",
+    focus: "50% 24%",
     bio: "Dylan leads the build side — websites, SEO and the technical work — drawing on a background in software development and digital marketing. He's usually the person you'll speak to when you need something changed.",
     socials: [
       { label: "LinkedIn", href: "https://www.linkedin.com/in/dylan-polland/" },
@@ -29,7 +29,7 @@ export const team: TeamMember[] = [
     name: "Sasha",
     role: "Co-Founder",
     image: "/images/team/sasha.jpg",
-    focus: "50% 30%",
+    focus: "50% 50%",
     bio: "Sasha looks after design, content and client care — making sure every site feels on-brand and every client feels properly looked after from first preview to launch and beyond.",
   },
 ];
