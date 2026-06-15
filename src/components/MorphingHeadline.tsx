@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const STATIC_START = "Websites that make ";
-const STATIC_END = " look trusted before the customer ever calls.";
+const STATIC_START = "Websites that make";
+const STATIC_END = "look trusted before the customer ever calls.";
 
 const industries = [
   "cafes",
@@ -47,20 +47,24 @@ export default function MorphingHeadline({ className, onWordChange }: MorphingHe
   return (
     <h1
       className={className}
-      aria-label={STATIC_START + industries[index] + STATIC_END}
+      aria-label={`${STATIC_START} ${industries[index]} ${STATIC_END}`}
     >
-      {STATIC_START}
-      <span
-        className="text-[var(--color-blue)]"
-        style={{
-          opacity: visible ? 1 : 0,
-          transition: `opacity ${FADE_MS}ms ease-in-out`,
-          display: "inline-block",
-        }}
-      >
-        {industries[index]}
+      {/* Static lines stay put; only the middle word swaps in place, so nothing
+          reflows or re-wraps as the word length changes. */}
+      <span className="block">{STATIC_START}</span>
+      <span className="block">
+        <span
+          className="inline-block text-[var(--color-blue)] will-change-[opacity,transform]"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(-0.14em)",
+            transition: `opacity ${FADE_MS}ms ease, transform ${FADE_MS}ms ease`,
+          }}
+        >
+          {industries[index]}
+        </span>
       </span>
-      {STATIC_END}
+      <span className="block">{STATIC_END}</span>
     </h1>
   );
 }

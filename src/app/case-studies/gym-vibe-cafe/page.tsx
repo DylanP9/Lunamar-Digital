@@ -60,16 +60,6 @@ export default function GymVibeCafeCaseStudy() {
 
       <section className="section pt-0">
         <div className="container-x">
-          <Reveal>
-            <blockquote className="mx-auto mb-8 max-w-3xl rounded-[var(--radius-card)] border border-[var(--color-line-strong)] bg-white/[0.04] p-7 text-center sm:p-9">
-              <p className="font-[family-name:var(--font-display)] text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl">
-                “They understood the brand and brought the website to life.”
-              </p>
-              <footer className="mt-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-mistier)]">
-                Gym Vibe Café
-              </footer>
-            </blockquote>
-          </Reveal>
           <div className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-line)] bg-[var(--color-line)] lg:grid-cols-3">
             {whatChanged.map((item, i) => (
               <Reveal key={item.title} delay={i * 70}>
