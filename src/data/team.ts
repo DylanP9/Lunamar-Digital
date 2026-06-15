@@ -19,7 +19,7 @@ export const team: TeamMember[] = [
     name: "Dylan",
     role: "Co-Founder",
     image: "/images/team/dylan.jpg",
-    focus: "50% 22%",
+    focus: "50% 30%",
     bio: "Dylan leads the build side — websites, SEO and the technical work — drawing on a background in software development and digital marketing. He's usually the person you'll speak to when you need something changed.",
     socials: [
       { label: "LinkedIn", href: "https://www.linkedin.com/in/dylan-polland/" },
